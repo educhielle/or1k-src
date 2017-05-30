@@ -1575,11 +1575,20 @@ static const CGEN_IBASE or1k_cgen_insn_table[MAX_INSNS] =
     OR1K_INSN_L_MACI, "l-maci", "l.maci", 32,
     { 0, { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }
   },
-/* l.cust1 */
+/** MoMA begin **/
+/* l.modi */
+  {
+    OR1K_INSN_L_MODI, "l-modi", "l.modi", 32,
+    { 0, { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }
+  },
+/** backup begin **
+/* l.cust1 *
   {
     OR1K_INSN_L_CUST1, "l-cust1", "l.cust1", 32,
     { 0, { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }
   },
+/** backup end **/
+/** MoMA end **/
 /* l.cust2 */
   {
     OR1K_INSN_L_CUST2, "l-cust2", "l.cust2", 32,
