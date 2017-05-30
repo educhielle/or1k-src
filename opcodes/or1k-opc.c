@@ -692,12 +692,22 @@ static const CGEN_OPCODE or1k_cgen_insn_opcode_table[MAX_INSNS] =
     { { MNEM, ' ', OP (RA), ',', OP (SIMM16), 0 } },
     & ifmt_l_maci, { 0x4c000000 }
   },
-/* l.cust1 */
+/** MoMA begin **/
+/* l.modi $rD,$rA,$simm16 */
+  {
+    { 0, 0, 0, 0 },
+    { { MNEM, ' ', OP (RD), ',', OP (RA), ',', OP (SIMM16), 0 } },
+    & ifmt_l_rfe, { 0x70000000 }
+  },
+/** backup begin **/
+/* l.cust1 *
   {
     { 0, 0, 0, 0 },
     { { MNEM, 0 } },
     & ifmt_l_rfe, { 0x70000000 }
   },
+/** backup end **/
+/** MoMA end **/
 /* l.cust2 */
   {
     { 0, 0, 0, 0 },

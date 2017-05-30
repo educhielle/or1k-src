@@ -132,7 +132,12 @@
    ("JALR"         #x12)
    ("MACI"         #x13)
    ("LWA"          #x1b)
-   ("CUST1"        #x1c)
+;; MoMA begin ;;
+   ("MODI"         #x1c)
+;; backup begin ;;
+;   ("CUST1"        #x1c)
+;; backup end ;;
+;; MoMA end ;;
    ("CUST2"        #x1d)
    ("CUST3"        #x1e)
    ("CUST4"        #x1f)

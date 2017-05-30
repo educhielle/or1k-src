@@ -296,6 +296,15 @@ static const CGEN_OPINST sfmt_l_xori_ops[] ATTRIBUTE_UNUSED = {
   { END, (const char *)0, (enum cgen_hw_type)0, (enum cgen_mode)0, (enum cgen_operand_type)0, 0, 0 }
 };
 
+/** MoMA begin **
+static const CGEN_OPINST sfmt_l_modi_ops[] ATTRIBUTE_UNUSED = {
+  { INPUT, "rA", HW_H_GPR, CGEN_MODE_UDI, OP_ENT (RA), 0, 0 },
+  { INPUT, "simm16", HW_H_SIMM16, CGEN_MODE_INT, OP_ENT (SIMM16), 0, 0 },
+  { OUTPUT, "rD", HW_H_GPR, CGEN_MODE_UDI, OP_ENT (RD), 0, 0 },
+  { END, (const char *)0, (enum cgen_hw_type)0, (enum cgen_mode)0, (enum cgen_operand_type)0, 0, 0 }
+};
+/** MoMA end **/
+
 static const CGEN_OPINST sfmt_l_addi_ops[] ATTRIBUTE_UNUSED = {
   { INPUT, "pc", HW_H_PC, CGEN_MODE_UDI, 0, 0, COND_REF },
   { INPUT, "rA", HW_H_GPR, CGEN_MODE_UDI, OP_ENT (RA), 0, 0 },
@@ -503,6 +512,9 @@ static const CGEN_OPINST *or1k_cgen_opinst_table[MAX_INSNS] = {
   & sfmt_l_mfspr_ops[0],
   & sfmt_l_mfspr_ops[0],
   & sfmt_l_xori_ops[0],
+/** MoMA begin **/
+//  & sfmt_l_modi_ops[0],
+/** MoMA end **/
   & sfmt_l_addi_ops[0],
   & sfmt_l_addic_ops[0],
   & sfmt_l_addi_ops[0],

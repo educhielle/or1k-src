@@ -277,7 +277,12 @@ typedef enum insn_opcode {
   OPC_J = 0, OPC_JAL = 1, OPC_BNF = 3, OPC_BF = 4
  , OPC_NOP = 5, OPC_MOVHIMACRC = 6, OPC_SYSTRAPSYNCS = 8, OPC_RFE = 9
  , OPC_VECTOR = 10, OPC_JR = 17, OPC_JALR = 18, OPC_MACI = 19
+/** MoMA begin **/
+/** backup begin **
  , OPC_LWA = 27, OPC_CUST1 = 28, OPC_CUST2 = 29, OPC_CUST3 = 30
+/** backup end **/
+ , OPC_LWA = 27, OPC_MODI = 28, OPC_CUST2 = 29, OPC_CUST3 = 30
+/** MoMA end **/
  , OPC_CUST4 = 31, OPC_LD = 32, OPC_LWZ = 33, OPC_LWS = 34
  , OPC_LBZ = 35, OPC_LBS = 36, OPC_LHZ = 37, OPC_LHS = 38
  , OPC_ADDI = 39, OPC_ADDIC = 40, OPC_ANDI = 41, OPC_ORI = 42

@@ -125,7 +125,12 @@ static const struct insn_sem or1k32bf_insn_sem[] =
   { OR1K_INSN_L_MAC, OR1K32BF_INSN_L_MAC, OR1K32BF_SFMT_L_MAC },
   { OR1K_INSN_L_MSB, OR1K32BF_INSN_L_MSB, OR1K32BF_SFMT_L_MAC },
   { OR1K_INSN_L_MACI, OR1K32BF_INSN_L_MACI, OR1K32BF_SFMT_L_MACI },
+/** MoMA begin **/
+/** backup begin **
   { OR1K_INSN_L_CUST1, OR1K32BF_INSN_L_CUST1, OR1K32BF_SFMT_L_RFE },
+/** backup end **/
+  { OR1K_INSN_L_MODI, OR1K32BF_INSN_L_MODI, OR1K32BF_SFMT_L_RFE },
+/** MoMA end **/
   { OR1K_INSN_L_CUST2, OR1K32BF_INSN_L_CUST2, OR1K32BF_SFMT_L_RFE },
   { OR1K_INSN_L_CUST3, OR1K32BF_INSN_L_CUST3, OR1K32BF_SFMT_L_RFE },
   { OR1K_INSN_L_CUST4, OR1K32BF_INSN_L_CUST4, OR1K32BF_SFMT_L_RFE },
@@ -537,7 +542,12 @@ or1k32bf_decode (SIM_CPU *current_cpu, IADDR pc,
         itype = OR1K32BF_INSN_X_INVALID; goto extract_sfmt_empty;
       case 896 :
         if ((entire_insn & 0xffffffff) == 0x70000000)
+/** MoMA begin **/
+/** backup begin **
           { itype = OR1K32BF_INSN_L_CUST1; goto extract_sfmt_l_rfe; }
+/** backup end **/
+          { itype = OR1K32BF_INSN_L_MODI; goto extract_sfmt_l_rfe; }
+/** MoMA end **/
         itype = OR1K32BF_INSN_X_INVALID; goto extract_sfmt_empty;
       case 928 :
         if ((entire_insn & 0xffffffff) == 0x74000000)
