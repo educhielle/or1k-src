@@ -133,7 +133,7 @@
    ("MACI"         #x13)
    ("LWA"          #x1b)
 ;; MoMA begin ;;
-   ("MODI"         #x1c)
+;;   ("MODI"         #x1c)
 ;; backup begin ;;
 ;   ("CUST1"        #x1c)
 ;; backup end ;;
