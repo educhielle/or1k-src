@@ -708,12 +708,22 @@ static const CGEN_OPCODE or1k_cgen_insn_opcode_table[MAX_INSNS] =
   },
 /** backup end **/
 /** MoMA end **/
-/* l.cust2 */
+/** MoMA begin **/
+/* moma.modmul $mA */
+  {
+    { 0, 0, 0, 0 },
+    { { MNEM, ' ', OP (RC), 0 } },
+    & ifmt_l_rfe, { 0x74000000 }
+  },
+/** backup begin **/
+/* l.cust2 *
   {
     { 0, 0, 0, 0 },
     { { MNEM, 0 } },
     & ifmt_l_rfe, { 0x74000000 }
   },
+/** backup end **/
+/** MoMA end **/
 /* l.cust3 */
   {
     { 0, 0, 0, 0 },
