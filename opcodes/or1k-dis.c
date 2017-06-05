@@ -111,6 +111,14 @@ or1k_cgen_print_operand (CGEN_CPU_DESC cd,
     case OR1K_OPERAND_RBSF :
       print_keyword (cd, info, & or1k_cgen_opval_h_fsr, fields->f_r3, 0);
       break;
+/** MoMA begin **/
+    case OR1K_OPERAND_RC :
+      print_keyword (cd, info, & or1k_cgen_opval_h_gpr, fields->f_r3, 0);
+      break;
+    case OR1K_OPERAND_MOMA_RB :
+      print_keyword (cd, info, & or1k_cgen_opval_h_momareg, fields->f_r2, 0);
+      break;
+/** MoMA end **/
     case OR1K_OPERAND_RD :
       print_keyword (cd, info, & or1k_cgen_opval_h_gpr, fields->f_r1, 0);
       break;

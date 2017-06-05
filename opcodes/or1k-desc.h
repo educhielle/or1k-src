@@ -404,7 +404,7 @@ typedef enum ifield_type {
  , OR1K_F_DISP26, OR1K_F_UIMM16, OR1K_F_SIMM16, OR1K_F_UIMM6
  , OR1K_F_UIMM16_SPLIT, OR1K_F_SIMM16_SPLIT, OR1K_F_MAX
 /** MoMA begin **/
- , OR1K_F_MOMA_R1
+ , OR1K_F_MOMA_R1, OR1K_F_MOMA_R2
 /** MoMA end **/
 } IFIELD_TYPE;
 
@@ -632,7 +632,7 @@ typedef enum cgen_operand_type {
  , OR1K_OPERAND_UIMM16_SPLIT, OR1K_OPERAND_RDSF, OR1K_OPERAND_RASF, OR1K_OPERAND_RBSF
  , OR1K_OPERAND_RDDF, OR1K_OPERAND_RADF, OR1K_OPERAND_RBDF, OR1K_OPERAND_MAX
 /** MoMA begin **/
- , OR1K_OPERAND_MOMA, OR1K_OPERAND_RC
+ , OR1K_OPERAND_MOMA, OR1K_OPERAND_MOMA_RB, OR1K_OPERAND_RC
 /** MoMA end **/
 } CGEN_OPERAND_TYPE;
 
@@ -688,6 +688,9 @@ extern const CGEN_ATTR_TABLE or1k_cgen_insn_attr_table[];
 extern CGEN_KEYWORD or1k_cgen_opval_h_fsr;
 extern CGEN_KEYWORD or1k_cgen_opval_h_fdr;
 extern CGEN_KEYWORD or1k_cgen_opval_h_gpr;
+/** MoMA begin **/
+extern CGEN_KEYWORD or1k_cgen_opval_h_momareg;
+/** MoMA end **/
 
 extern const CGEN_HW_ENTRY or1k_cgen_hw_table[];
 

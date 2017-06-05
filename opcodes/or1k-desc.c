@@ -289,32 +289,13 @@ static CGEN_KEYWORD_ENTRY or1k_cgen_opval_h_momareg_entries[] =
   { "m12", 12, {0, {{{0, 0}}}}, 0, 0 },
   { "m13", 13, {0, {{{0, 0}}}}, 0, 0 },
   { "m14", 14, {0, {{{0, 0}}}}, 0, 0 },
-  { "m15", 15, {0, {{{0, 0}}}}, 0, 0 },
-  { "r16", 16, {0, {{{0, 0}}}}, 0, 0 },
-  { "r17", 17, {0, {{{0, 0}}}}, 0, 0 },
-  { "r18", 18, {0, {{{0, 0}}}}, 0, 0 },
-  { "r19", 19, {0, {{{0, 0}}}}, 0, 0 },
-  { "r20", 20, {0, {{{0, 0}}}}, 0, 0 },
-  { "r21", 21, {0, {{{0, 0}}}}, 0, 0 },
-  { "r22", 22, {0, {{{0, 0}}}}, 0, 0 },
-  { "r23", 23, {0, {{{0, 0}}}}, 0, 0 },
-  { "r24", 24, {0, {{{0, 0}}}}, 0, 0 },
-  { "r25", 25, {0, {{{0, 0}}}}, 0, 0 },
-  { "r26", 26, {0, {{{0, 0}}}}, 0, 0 },
-  { "r27", 27, {0, {{{0, 0}}}}, 0, 0 },
-  { "r28", 28, {0, {{{0, 0}}}}, 0, 0 },
-  { "r29", 29, {0, {{{0, 0}}}}, 0, 0 },
-  { "r30", 30, {0, {{{0, 0}}}}, 0, 0 },
-  { "r31", 31, {0, {{{0, 0}}}}, 0, 0 },
-  { "lr", 9, {0, {{{0, 0}}}}, 0, 0 },
-  { "sp", 1, {0, {{{0, 0}}}}, 0, 0 },
-  { "fp", 2, {0, {{{0, 0}}}}, 0, 0 }
+  { "m15", 15, {0, {{{0, 0}}}}, 0, 0 }
 };
 
 CGEN_KEYWORD or1k_cgen_opval_h_momareg =
 {
   & or1k_cgen_opval_h_momareg_entries[0],
-  35,
+  16,
   0, 0, 0, 0, ""
 };
 /** MoMA end **/
@@ -991,7 +972,7 @@ const CGEN_IFLD or1k_cgen_ifld_table[] =
   { OR1K_F_R2, "f-r2", 0, 32, 20, 5, { 0, { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }  },
   { OR1K_F_R3, "f-r3", 0, 32, 15, 5, { 0, { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }  },
 /** MoMA begin **/
-  { OR1K_F_MOMA_R1, "f-moma-r1", 0, 32, 15, 5, { 0, { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }  },
+  { OR1K_F_MOMA_R2, "f-moma-r2", 0, 32, 20, 4, { 0, { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }  },
 /** MoMA end **/
   { OR1K_F_OP_25_2, "f-op-25-2", 0, 32, 25, 2, { 0, { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }  },
   { OR1K_F_OP_25_5, "f-op-25-5", 0, 32, 25, 5, { 0, { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }  },
@@ -1144,6 +1125,10 @@ const CGEN_OPERAND or1k_cgen_operand_table[] =
 /* rB: source register B */
   { "rC", OR1K_OPERAND_RC, HW_H_GPR, 15, 5,
     { 0, { (const PTR) &or1k_cgen_ifld_table[OR1K_F_R3] } }, 
+    { 0, { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }  },
+/* rB: source register B */
+  { "mB", OR1K_OPERAND_MOMA_RB, HW_H_MOMAREG, 15, 5,
+    { 0, { (const PTR) &or1k_cgen_ifld_table[OR1K_F_MOMA_R2] } }, 
     { 0, { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }  },
 /* rB: source register B */
   { "mA", OR1K_OPERAND_MOMA, HW_H_MOMAREG, 15, 5,

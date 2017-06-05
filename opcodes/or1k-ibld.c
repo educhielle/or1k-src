@@ -591,6 +591,14 @@ or1k_cgen_insert_operand (CGEN_CPU_DESC cd,
     case OR1K_OPERAND_RBSF :
       errmsg = insert_normal (cd, fields->f_r3, 0, 0, 15, 5, 32, total_length, buffer);
       break;
+/** MoMA begin **/
+    case OR1K_OPERAND_RC :
+      errmsg = insert_normal (cd, fields->f_r3, 0, 0, 15, 5, 32, total_length, buffer);
+      break;
+    case OR1K_OPERAND_MOMA_RB :
+      errmsg = insert_normal (cd, fields->f_r2, 0, 0, 15, 5, 32, total_length, buffer);
+      break;
+/** MoMA end **/
     case OR1K_OPERAND_RD :
       errmsg = insert_normal (cd, fields->f_r1, 0, 0, 25, 5, 32, total_length, buffer);
       break;
@@ -706,6 +714,14 @@ or1k_cgen_extract_operand (CGEN_CPU_DESC cd,
     case OR1K_OPERAND_RBSF :
       length = extract_normal (cd, ex_info, insn_value, 0, 0, 15, 5, 32, total_length, pc, & fields->f_r3);
       break;
+/** MoMA begin **/
+    case OR1K_OPERAND_RC :
+      length = extract_normal (cd, ex_info, insn_value, 0, 0, 15, 5, 32, total_length, pc, & fields->f_r3);
+      break;
+    case OR1K_OPERAND_MOMA_RB :
+      length = extract_normal (cd, ex_info, insn_value, 0, 0, 15, 5, 32, total_length, pc, & fields->f_r2);
+      break;
+/** MoMA end **/
     case OR1K_OPERAND_RD :
       length = extract_normal (cd, ex_info, insn_value, 0, 0, 25, 5, 32, total_length, pc, & fields->f_r1);
       break;
@@ -801,6 +817,14 @@ or1k_cgen_get_int_operand (CGEN_CPU_DESC cd ATTRIBUTE_UNUSED,
     case OR1K_OPERAND_RBSF :
       value = fields->f_r3;
       break;
+/** MoMA begin */
+    case OR1K_OPERAND_RC :
+      value = fields->f_r3;
+      break;
+    case OR1K_OPERAND_MOMA_RB :
+      value = fields->f_r2;
+      break;
+/** MoMA end **/
     case OR1K_OPERAND_RD :
       value = fields->f_r1;
       break;
@@ -866,6 +890,14 @@ or1k_cgen_get_vma_operand (CGEN_CPU_DESC cd ATTRIBUTE_UNUSED,
     case OR1K_OPERAND_RBSF :
       value = fields->f_r3;
       break;
+/** MoMA begin **/
+    case OR1K_OPERAND_RC :
+      value = fields->f_r3;
+      break;
+    case OR1K_OPERAND_MOMA_RB :
+      value = fields->f_r2;
+      break;
+/** MoMA end **/
     case OR1K_OPERAND_RD :
       value = fields->f_r1;
       break;
@@ -938,6 +970,14 @@ or1k_cgen_set_int_operand (CGEN_CPU_DESC cd ATTRIBUTE_UNUSED,
     case OR1K_OPERAND_RBSF :
       fields->f_r3 = value;
       break;
+/** MoMA begin **/
+    case OR1K_OPERAND_RC :
+      fields->f_r3 = value;
+      break;
+    case OR1K_OPERAND_MOMA_RB :
+      fields->f_r2 = value;
+      break;
+/** MoMA end **/
     case OR1K_OPERAND_RD :
       fields->f_r1 = value;
       break;
@@ -1000,6 +1040,14 @@ or1k_cgen_set_vma_operand (CGEN_CPU_DESC cd ATTRIBUTE_UNUSED,
     case OR1K_OPERAND_RBSF :
       fields->f_r3 = value;
       break;
+/** MoMA begin **/
+    case OR1K_OPERAND_RC :
+      fields->f_r3 = value;
+      break;
+    case OR1K_OPERAND_MOMA_RB :
+      fields->f_r2 = value;
+      break;
+/** MoMA end **/
     case OR1K_OPERAND_RD :
       fields->f_r1 = value;
       break;

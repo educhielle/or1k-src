@@ -712,7 +712,7 @@ static const CGEN_OPCODE or1k_cgen_insn_opcode_table[MAX_INSNS] =
 /* moma.modmul $mA */
   {
     { 0, 0, 0, 0 },
-    { { MNEM, ' ', OP (RC), 0 } },
+    { { MNEM, ' ', OP (MOMA_RB), 0 } },
     & ifmt_l_rfe, { 0x74000000 }
   },
 /** backup begin **/

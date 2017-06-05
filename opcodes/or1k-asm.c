@@ -474,6 +474,14 @@ or1k_cgen_parse_operand (CGEN_CPU_DESC cd,
     case OR1K_OPERAND_RBSF :
       errmsg = cgen_parse_keyword (cd, strp, & or1k_cgen_opval_h_fsr, & fields->f_r3);
       break;
+/** MoMA begin **/
+    case OR1K_OPERAND_RC :
+      errmsg = cgen_parse_keyword (cd, strp, & or1k_cgen_opval_h_gpr, & fields->f_r3);
+      break;
+    case OR1K_OPERAND_MOMA_RB :
+      errmsg = cgen_parse_keyword (cd, strp, & or1k_cgen_opval_h_momareg, & fields->f_r2);
+      break;
+/** MoMA end **/
     case OR1K_OPERAND_RD :
       errmsg = cgen_parse_keyword (cd, strp, & or1k_cgen_opval_h_gpr, & fields->f_r1);
       break;
