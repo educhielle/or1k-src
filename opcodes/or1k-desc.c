@@ -272,7 +272,41 @@ CGEN_KEYWORD or1k_cgen_opval_h_gpr =
 };
 
 /** MoMA begin **/
-static CGEN_KEYWORD_ENTRY or1k_cgen_opval_h_momareg_entries[] =
+static CGEN_KEYWORD_ENTRY or1k_cgen_opval_h_momareg2048_entries[] =
+{
+  { "m0", 0, {0, {{{0, 0}}}}, 0, 0 },
+  { "m1", 1, {0, {{{0, 0}}}}, 0, 0 },
+  { "m2", 2, {0, {{{0, 0}}}}, 0, 0 },
+  { "m3", 3, {0, {{{0, 0}}}}, 0, 0 }
+};
+
+CGEN_KEYWORD or1k_cgen_opval_h_momareg2048 =
+{
+  & or1k_cgen_opval_h_momareg_entries[0],
+  4,
+  0, 0, 0, 0, ""
+};
+
+static CGEN_KEYWORD_ENTRY or1k_cgen_opval_h_momareg1024_entries[] =
+{
+  { "m0", 0, {0, {{{0, 0}}}}, 0, 0 },
+  { "m1", 1, {0, {{{0, 0}}}}, 0, 0 },
+  { "m2", 2, {0, {{{0, 0}}}}, 0, 0 },
+  { "m3", 3, {0, {{{0, 0}}}}, 0, 0 },
+  { "m4", 4, {0, {{{0, 0}}}}, 0, 0 },
+  { "m5", 5, {0, {{{0, 0}}}}, 0, 0 },
+  { "m6", 6, {0, {{{0, 0}}}}, 0, 0 },
+  { "m7", 7, {0, {{{0, 0}}}}, 0, 0 }
+};
+
+CGEN_KEYWORD or1k_cgen_opval_h_momareg =
+{
+  & or1k_cgen_opval_h_momareg_entries[0],
+  8,
+  0, 0, 0, 0, ""
+};
+
+static CGEN_KEYWORD_ENTRY or1k_cgen_opval_h_momareg512_entries[] =
 {
   { "m0", 0, {0, {{{0, 0}}}}, 0, 0 },
   { "m1", 1, {0, {{{0, 0}}}}, 0, 0 },
@@ -296,6 +330,50 @@ CGEN_KEYWORD or1k_cgen_opval_h_momareg =
 {
   & or1k_cgen_opval_h_momareg_entries[0],
   16,
+  0, 0, 0, 0, ""
+};
+
+static CGEN_KEYWORD_ENTRY or1k_cgen_opval_h_momareg256_entries[] =
+{
+  { "m0", 0, {0, {{{0, 0}}}}, 0, 0 },
+  { "m1", 1, {0, {{{0, 0}}}}, 0, 0 },
+  { "m2", 2, {0, {{{0, 0}}}}, 0, 0 },
+  { "m3", 3, {0, {{{0, 0}}}}, 0, 0 },
+  { "m4", 4, {0, {{{0, 0}}}}, 0, 0 },
+  { "m5", 5, {0, {{{0, 0}}}}, 0, 0 },
+  { "m6", 6, {0, {{{0, 0}}}}, 0, 0 },
+  { "m7", 7, {0, {{{0, 0}}}}, 0, 0 },
+  { "m8", 8, {0, {{{0, 0}}}}, 0, 0 },
+  { "m9", 9, {0, {{{0, 0}}}}, 0, 0 },
+  { "m10", 10, {0, {{{0, 0}}}}, 0, 0 },
+  { "m11", 11, {0, {{{0, 0}}}}, 0, 0 },
+  { "m12", 12, {0, {{{0, 0}}}}, 0, 0 },
+  { "m13", 13, {0, {{{0, 0}}}}, 0, 0 },
+  { "m14", 14, {0, {{{0, 0}}}}, 0, 0 },
+  { "m15", 15, {0, {{{0, 0}}}}, 0, 0 },
+  { "m16", 16, {0, {{{0, 0}}}}, 0, 0 },
+  { "m17", 17, {0, {{{0, 0}}}}, 0, 0 },
+  { "m18", 18, {0, {{{0, 0}}}}, 0, 0 },
+  { "m19", 19, {0, {{{0, 0}}}}, 0, 0 },
+  { "m20", 20, {0, {{{0, 0}}}}, 0, 0 },
+  { "m21", 21, {0, {{{0, 0}}}}, 0, 0 },
+  { "m22", 22, {0, {{{0, 0}}}}, 0, 0 },
+  { "m23", 23, {0, {{{0, 0}}}}, 0, 0 },
+  { "m24", 24, {0, {{{0, 0}}}}, 0, 0 },
+  { "m25", 25, {0, {{{0, 0}}}}, 0, 0 },
+  { "m26", 26, {0, {{{0, 0}}}}, 0, 0 },
+  { "m27", 27, {0, {{{0, 0}}}}, 0, 0 },
+  { "m28", 28, {0, {{{0, 0}}}}, 0, 0 },
+  { "m29", 29, {0, {{{0, 0}}}}, 0, 0 },
+  { "m30", 30, {0, {{{0, 0}}}}, 0, 0 },
+  { "m31", 31, {0, {{{0, 0}}}}, 0, 0 }
+
+};
+
+CGEN_KEYWORD or1k_cgen_opval_h_momareg =
+{
+  & or1k_cgen_opval_h_momareg_entries[0],
+  32,
   0, 0, 0, 0, ""
 };
 /** MoMA end **/
@@ -1126,19 +1204,19 @@ const CGEN_OPERAND or1k_cgen_operand_table[] =
     { 0, { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }  },
 /** MoMA begin **/
 /* mD: moma destination register D */
-  { "mA", OR1K_OPERAND_MOMA_RD, HW_H_MOMAREG, 25, 4,
+  { "mD", OR1K_OPERAND_MOMA_RD, HW_H_MOMAREG, 25, 5,
     { 0, { (const PTR) &or1k_cgen_ifld_table[OR1K_F_MOMA_R1] } }, 
     { 0, { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }  },
 /* mA: moma source register A */
-  { "mA", OR1K_OPERAND_MOMA_RA, HW_H_MOMAREG, 20, 4,
+  { "mA", OR1K_OPERAND_MOMA_RA, HW_H_MOMAREG, 20, 5,
     { 0, { (const PTR) &or1k_cgen_ifld_table[OR1K_F_MOMA_R2] } }, 
     { 0, { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }  },
 /* mB: moma source register B */
-  { "mB", OR1K_OPERAND_MOMA_RB, HW_H_MOMAREG, 15, 4,
+  { "mB", OR1K_OPERAND_MOMA_RB, HW_H_MOMAREG, 15, 5,
     { 0, { (const PTR) &or1k_cgen_ifld_table[OR1K_F_MOMA_R3] } }, 
     { 0, { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }  },
 /* mC: moma source register C */
-  { "mC", OR1K_OPERAND_MOMA_RC, HW_H_MOMAREG, 10, 4,
+  { "mC", OR1K_OPERAND_MOMA_RC, HW_H_MOMAREG, 10, 5,
     { 0, { (const PTR) &or1k_cgen_ifld_table[OR1K_F_MOMA_R4] } }, 
     { 0, { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }  },
 /** MoMA end **/
