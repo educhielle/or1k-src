@@ -60,7 +60,8 @@ typedef enum cgen_insn_type {
 /** backup begin **
  , OR1K_INSN_L_MSB, OR1K_INSN_L_MACI, OR1K_INSN_L_CUST1, OR1K_INSN_L_CUST2
 /** backup end **/
- , OR1K_INSN_L_MSB, OR1K_INSN_L_MACI, OR1K_INSN_L_MODI, OR1K_INSN_L_CUST2
+ , OR1K_INSN_L_MSB, OR1K_INSN_L_MACI, OR1K_INSN_L_MODI, OR1K_INSN_L_MOMA_MODMUL
+ , OR1K_INSN_L_MOMA_MTMR
 /** MoMA end **/
  , OR1K_INSN_L_CUST3, OR1K_INSN_L_CUST4, OR1K_INSN_L_CUST5, OR1K_INSN_L_CUST6
  , OR1K_INSN_L_CUST7, OR1K_INSN_L_CUST8, OR1K_INSN_LF_ADD_S, OR1K_INSN_LF_ADD_D
@@ -89,6 +90,9 @@ struct cgen_fields
   long f_r1;
   long f_r2;
   long f_r3;
+/** MoMA begin **/
+  long f_r4;
+/** MoMA end **/
   long f_op_25_2;
   long f_op_25_5;
   long f_op_16_1;

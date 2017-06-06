@@ -84,6 +84,9 @@ struct cgen_fields
   long f_r1;
   long f_r2;
   long f_r3;
+/** MoMA begin **/
+  long f_r4;
+/** MoMA end **/
   long f_op_25_2;
   long f_op_25_5;
   long f_op_16_1;

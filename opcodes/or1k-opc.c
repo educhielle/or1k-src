@@ -699,6 +699,18 @@ static const CGEN_OPCODE or1k_cgen_insn_opcode_table[MAX_INSNS] =
     { { MNEM, ' ', OP (RD), ',', OP (RA), ',', OP (SIMM16), 0 } },
     & ifmt_l_rfe, { 0x70000000 }
   },
+/* moma.modmul $mD,$mA,$mB,$mC */
+  {
+    { 0, 0, 0, 0 },
+    { { MNEM, ' ', OP (MOMA_RD), ',', OP (MOMA_RA), ',', OP (MOMA_RB), ',', OP (MOMA_RC), 0 } },
+    & ifmt_l_rfe, { 0x74000000 }
+  },
+/* moma.mtmr $mD($uimm16),$rA */
+  {
+    { 0, 0, 0, 0 },
+    { { MNEM, ' ', OP (MOMA_RD), ',', OP (MOMA_RA), ',', OP (MOMA_RB), 0 } },
+    & ifmt_l_rfe, { 0x74000001 }
+  },
 /** backup begin **/
 /* l.cust1 *
   {
@@ -706,16 +718,6 @@ static const CGEN_OPCODE or1k_cgen_insn_opcode_table[MAX_INSNS] =
     { { MNEM, 0 } },
     & ifmt_l_rfe, { 0x70000000 }
   },
-/** backup end **/
-/** MoMA end **/
-/** MoMA begin **/
-/* moma.modmul $mA */
-  {
-    { 0, 0, 0, 0 },
-    { { MNEM, ' ', OP (MOMA_RB), 0 } },
-    & ifmt_l_rfe, { 0x74000000 }
-  },
-/** backup begin **/
 /* l.cust2 *
   {
     { 0, 0, 0, 0 },
