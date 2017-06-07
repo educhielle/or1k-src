@@ -475,17 +475,65 @@ or1k_cgen_parse_operand (CGEN_CPU_DESC cd,
       errmsg = cgen_parse_keyword (cd, strp, & or1k_cgen_opval_h_fsr, & fields->f_r3);
       break;
 /** MoMA begin **/
-    case OR1K_OPERAND_MOMA_RD :
-      errmsg = cgen_parse_keyword (cd, strp, & or1k_cgen_opval_h_momareg, & fields->f_r1);
+    case OR1K_OPERAND_MOMA_RD_2048 :
+      errmsg = cgen_parse_keyword (cd, strp, & or1k_cgen_opval_h_momareg2048, & fields->f_r1);
       break;
-    case OR1K_OPERAND_MOMA_RA :
-      errmsg = cgen_parse_keyword (cd, strp, & or1k_cgen_opval_h_momareg, & fields->f_r2);
+    case OR1K_OPERAND_MOMA_RA_2048 :
+      errmsg = cgen_parse_keyword (cd, strp, & or1k_cgen_opval_h_momareg2048, & fields->f_r2);
       break;
-    case OR1K_OPERAND_MOMA_RB :
-      errmsg = cgen_parse_keyword (cd, strp, & or1k_cgen_opval_h_momareg, & fields->f_r3);
+    case OR1K_OPERAND_MOMA_RB_2048 :
+      errmsg = cgen_parse_keyword (cd, strp, & or1k_cgen_opval_h_momareg2048, & fields->f_r3);
       break;
-    case OR1K_OPERAND_MOMA_RC :
-      errmsg = cgen_parse_keyword (cd, strp, & or1k_cgen_opval_h_momareg, & fields->f_r4);
+    case OR1K_OPERAND_MOMA_RC_2048 :
+      errmsg = cgen_parse_keyword (cd, strp, & or1k_cgen_opval_h_momareg2048, & fields->f_r4);
+      break;
+    case OR1K_OPERAND_MOMA_RD_1024 :
+      errmsg = cgen_parse_keyword (cd, strp, & or1k_cgen_opval_h_momareg1024, & fields->f_r1);
+      break;
+    case OR1K_OPERAND_MOMA_RA_1024 :
+      errmsg = cgen_parse_keyword (cd, strp, & or1k_cgen_opval_h_momareg1024, & fields->f_r2);
+      break;
+    case OR1K_OPERAND_MOMA_RB_1024 :
+      errmsg = cgen_parse_keyword (cd, strp, & or1k_cgen_opval_h_momareg1024, & fields->f_r3);
+      break;
+    case OR1K_OPERAND_MOMA_RC_1024 :
+      errmsg = cgen_parse_keyword (cd, strp, & or1k_cgen_opval_h_momareg1024, & fields->f_r4);
+      break;
+    case OR1K_OPERAND_MOMA_RD_512 :
+      errmsg = cgen_parse_keyword (cd, strp, & or1k_cgen_opval_h_momareg512, & fields->f_r1);
+      break;
+    case OR1K_OPERAND_MOMA_RA_512 :
+      errmsg = cgen_parse_keyword (cd, strp, & or1k_cgen_opval_h_momareg512, & fields->f_r2);
+      break;
+    case OR1K_OPERAND_MOMA_RB_512 :
+      errmsg = cgen_parse_keyword (cd, strp, & or1k_cgen_opval_h_momareg512, & fields->f_r3);
+      break;
+    case OR1K_OPERAND_MOMA_RC_512 :
+      errmsg = cgen_parse_keyword (cd, strp, & or1k_cgen_opval_h_momareg512, & fields->f_r4);
+      break;
+    case OR1K_OPERAND_MOMA_RD_256 :
+      errmsg = cgen_parse_keyword (cd, strp, & or1k_cgen_opval_h_momareg256, & fields->f_r1);
+      break;
+    case OR1K_OPERAND_MOMA_RA_256 :
+      errmsg = cgen_parse_keyword (cd, strp, & or1k_cgen_opval_h_momareg256, & fields->f_r2);
+      break;
+    case OR1K_OPERAND_MOMA_RB_256 :
+      errmsg = cgen_parse_keyword (cd, strp, & or1k_cgen_opval_h_momareg256, & fields->f_r3);
+      break;
+    case OR1K_OPERAND_MOMA_RC_256 :
+      errmsg = cgen_parse_keyword (cd, strp, & or1k_cgen_opval_h_momareg256, & fields->f_r4);
+      break;
+    case OR1K_OPERAND_MOMA_UIMM6 :
+      errmsg = cgen_parse_unsigned_integer (cd, strp, OR1K_OPERAND_MOMA_UIMM6, (unsigned long *) (& fields->f_uimm6));
+      break;
+    case OR1K_OPERAND_MOMA_UIMM5 :
+      errmsg = cgen_parse_unsigned_integer (cd, strp, OR1K_OPERAND_MOMA_UIMM5, (unsigned long *) (& fields->f_uimm6));
+      break;
+    case OR1K_OPERAND_MOMA_UIMM4 :
+      errmsg = cgen_parse_unsigned_integer (cd, strp, OR1K_OPERAND_MOMA_UIMM4, (unsigned long *) (& fields->f_uimm6));
+      break;
+    case OR1K_OPERAND_MOMA_UIMM3 :
+      errmsg = cgen_parse_unsigned_integer (cd, strp, OR1K_OPERAND_MOMA_UIMM3, (unsigned long *) (& fields->f_uimm6));
       break;
 /** MoMA end **/
     case OR1K_OPERAND_RD :

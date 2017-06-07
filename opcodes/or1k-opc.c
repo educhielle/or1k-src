@@ -167,6 +167,73 @@ static const CGEN_IFMT ifmt_lf_cust1_d ATTRIBUTE_UNUSED = {
   32, 32, 0xffe007ff, { { F (F_OPCODE) }, { F (F_RESV_25_5) }, { F (F_R1) }, { F (F_R1) }, { F (F_RESV_10_3) }, { F (F_OP_7_8) }, { 0 } }
 };
 
+/** MoMA begin **/
+static const CGEN_IFMT ifmt_moma_mdmambmc2048 ATTRIBUTE_UNUSED = {
+  32, 32, 0xffffffff, { { F (F_OPCODE) }, { F (F_MOMA_RESV_25_3) }, { F (F_MOMA_R1_2048) }, { F (F_MOMA_RESV_20_3) }, { F (F_MOMA_R2_2048) }, { F (F_MOMA_RESV_15_3) }, { F (F_MOMA_R3_2048) }, { F (F_MOMA_RESV_10_3) }, { F (F_MOMA_R4_2048) }, { F (F_MOMA_OP_5_6) }, { 0 } }
+};
+
+static const CGEN_IFMT ifmt_moma_mdmambmc1024 ATTRIBUTE_UNUSED = {
+  32, 32, 0xffffffff, { { F (F_OPCODE) }, { F (F_MOMA_RESV_25_2) }, { F (F_MOMA_R1_1024) }, { F (F_MOMA_RESV_20_2) }, { F (F_MOMA_R2_1024) }, { F (F_MOMA_RESV_15_2) }, { F (F_MOMA_R3_1024) }, { F (F_MOMA_RESV_10_2) }, { F (F_MOMA_R4_1024) }, { F (F_MOMA_OP_5_6) }, { 0 } }
+};
+
+static const CGEN_IFMT ifmt_moma_mdmambmc512 ATTRIBUTE_UNUSED = {
+  32, 32, 0xffffffff, { { F (F_OPCODE) }, { F (F_MOMA_RESV_25_1) }, { F (F_MOMA_R1_512) }, { F (F_MOMA_RESV_20_1) }, { F (F_MOMA_R2_512) }, { F (F_MOMA_RESV_15_1) }, { F (F_MOMA_R3_512) }, { F (F_MOMA_RESV_10_1) }, { F (F_MOMA_R4_512) }, { F (F_MOMA_OP_5_6) }, { 0 } }
+};
+
+static const CGEN_IFMT ifmt_moma_mdmambmc256 ATTRIBUTE_UNUSED = {
+  32, 32, 0xffffffff, { { F (F_OPCODE) }, { F (F_MOMA_R1_256) }, { F (F_MOMA_R2_256) }, { F (F_MOMA_R3_256) }, { F (F_MOMA_R4_256) }, { F (F_MOMA_OP_5_6) }, { 0 } }
+};
+
+static const CGEN_IFMT ifmt_moma_mdmamb2048 ATTRIBUTE_UNUSED = {
+  32, 32, 0xffffffff, { { F (F_OPCODE) }, { F (F_MOMA_RESV_25_3) }, { F (F_MOMA_R1_2048) }, { F (F_MOMA_RESV_20_3) }, { F (F_MOMA_R2_2048) }, { F (F_MOMA_RESV_15_3) }, { F (F_MOMA_R3_2048) }, { F (F_MOMA_RESV_10_5) }, { F (F_MOMA_OP_5_6) }, { 0 } }
+};
+
+static const CGEN_IFMT ifmt_moma_mdmamb1024 ATTRIBUTE_UNUSED = {
+  32, 32, 0xffffffff, { { F (F_OPCODE) }, { F (F_MOMA_RESV_25_2) }, { F (F_MOMA_R1_1024) }, { F (F_MOMA_RESV_20_2) }, { F (F_MOMA_R2_1024) }, { F (F_MOMA_RESV_15_2) }, { F (F_MOMA_R3_1024) }, { F (F_MOMA_RESV_10_5) }, { F (F_MOMA_OP_5_6) }, { 0 } }
+};
+
+static const CGEN_IFMT ifmt_moma_mdmamb512 ATTRIBUTE_UNUSED = {
+  32, 32, 0xffffffff, { { F (F_OPCODE) }, { F (F_MOMA_RESV_25_1) }, { F (F_MOMA_R1_512) }, { F (F_MOMA_RESV_20_1) }, { F (F_MOMA_R2_512) }, { F (F_MOMA_RESV_15_1) }, { F (F_MOMA_R3_512) }, { F (F_MOMA_RESV_10_5) }, { F (F_MOMA_OP_5_6) }, { 0 } }
+};
+
+static const CGEN_IFMT ifmt_moma_mdmamb256 ATTRIBUTE_UNUSED = {
+  32, 32, 0xffffffff, { { F (F_OPCODE) }, { F (F_MOMA_R1_256) }, { F (F_MOMA_R2_256) }, { F (F_MOMA_R3_256) }, { F (F_MOMA_RESV_10_5) }, { F (F_MOMA_OP_5_6) }, { 0 } }
+};
+
+static const CGEN_IFMT ifmt_moma_mdrauimm2048 ATTRIBUTE_UNUSED = {
+  32, 32, 0xffffffff, { { F (F_OPCODE) }, { F (F_MOMA_RESV_25_3) }, { F (F_MOMA_R1_2048) }, { F (F_R2) }, { F (F_MOMA_UIMM6) }, { F (F_MOMA_RESV_9_4) }, { F (F_MOMA_OP_5_6) }, { 0 } }
+};
+
+static const CGEN_IFMT ifmt_moma_mdrauimm1024 ATTRIBUTE_UNUSED = {
+  32, 32, 0xffffffff, { { F (F_OPCODE) }, { F (F_MOMA_RESV_25_2) }, { F (F_MOMA_R1_1024) }, { F (F_R2) }, { F (F_MOMA_RESV_15_1) }, { F (F_MOMA_UIMM5) }, { F (F_MOMA_RESV_9_4) }, { F (F_MOMA_OP_5_6) }, { 0 } }
+};
+
+static const CGEN_IFMT ifmt_moma_mdrauimm512 ATTRIBUTE_UNUSED = {
+  32, 32, 0xffffffff, { { F (F_OPCODE) }, { F (F_MOMA_RESV_25_1) }, { F (F_MOMA_R1_512) }, { F (F_R2) }, { F (F_MOMA_RESV_15_2) }, { F (F_MOMA_UIMM4) }, { F (F_MOMA_RESV_9_4) }, { F (F_MOMA_OP_5_6) }, { 0 } }
+};
+
+static const CGEN_IFMT ifmt_moma_mdrauimm256 ATTRIBUTE_UNUSED = {
+  32, 32, 0xffffffff, { { F (F_OPCODE) }, { F (F_MOMA_R1_256) }, { F (F_R2) }, { F (F_MOMA_RESV_15_3) }, { F (F_MOMA_UIMM3) }, { F (F_MOMA_RESV_9_4) }, { F (F_MOMA_OP_5_6) }, { 0 } }
+};
+
+static const CGEN_IFMT ifmt_moma_rdmauimm2048 ATTRIBUTE_UNUSED = {
+  32, 32, 0xffffffff, { { F (F_OPCODE) }, { F (F_R1) }, { F (F_MOMA_RESV_20_3) }, { F (F_MOMA_R2_2048) }, { F (F_MOMA_UIMM6) }, { F (F_MOMA_RESV_9_4) }, { F (F_MOMA_OP_5_6) }, { 0 } }
+};
+
+static const CGEN_IFMT ifmt_moma_rdmauimm1024 ATTRIBUTE_UNUSED = {
+  32, 32, 0xffffffff, { { F (F_OPCODE) }, { F (F_R1) }, { F (F_MOMA_RESV_20_2) }, { F (F_MOMA_R2_1024) }, { F (F_MOMA_RESV_15_1) }, { F (F_MOMA_UIMM5) }, { F (F_MOMA_RESV_9_4) }, { F (F_MOMA_OP_5_6) }, { 0 } }
+};
+
+static const CGEN_IFMT ifmt_moma_rdmauimm512 ATTRIBUTE_UNUSED = {
+  32, 32, 0xffffffff, { { F (F_OPCODE) }, { F (F_R1) }, { F (F_MOMA_RESV_20_1) }, { F (F_MOMA_R2_512) }, { F (F_MOMA_RESV_15_2) }, { F (F_MOMA_UIMM4) }, { F (F_MOMA_RESV_9_4) }, { F (F_MOMA_OP_5_6) }, { 0 } }
+};
+
+static const CGEN_IFMT ifmt_moma_rdmauimm256 ATTRIBUTE_UNUSED = {
+  32, 32, 0xffffffff, { { F (F_OPCODE) }, { F (F_R1) }, { F (F_MOMA_R2_256) }, { F (F_MOMA_RESV_15_3) }, { F (F_MOMA_UIMM3) }, { F (F_MOMA_RESV_9_4) }, { F (F_MOMA_OP_5_6) }, { 0 } }
+};
+
+/** MoMA end **/
+
 #undef F
 
 #define A(a) (1 << CGEN_INSN_##a)
@@ -702,14 +769,242 @@ static const CGEN_OPCODE or1k_cgen_insn_opcode_table[MAX_INSNS] =
 /* moma.modmul $mD,$mA,$mB,$mC */
   {
     { 0, 0, 0, 0 },
-    { { MNEM, ' ', OP (MOMA_RD), ',', OP (MOMA_RA), ',', OP (MOMA_RB), ',', OP (MOMA_RC), 0 } },
-    & ifmt_l_rfe, { 0x74000000 }
+    { { MNEM, ' ', OP (MOMA_RD_1024), ',', OP (MOMA_RA_1024), ',', OP (MOMA_RB_1024), ',', OP (MOMA_RC_1024), 0 } },
+    & ifmt_moma_mdmambmc1024, { 0x74000010 }
+  },
+/* moma.modmul2048 $mD,$mA,$mB,$mC */
+  {
+    { 0, 0, 0, 0 },
+    { { MNEM, ' ', OP (MOMA_RD_2048), ',', OP (MOMA_RA_2048), ',', OP (MOMA_RB_2048), ',', OP (MOMA_RC_2048), 0 } },
+    & ifmt_moma_mdmambmc2048, { 0x74000000 }
+  },
+/* moma.modmul1024 $mD,$mA,$mB,$mC */
+  {
+    { 0, 0, 0, 0 },
+    { { MNEM, ' ', OP (MOMA_RD_1024), ',', OP (MOMA_RA_1024), ',', OP (MOMA_RB_1024), ',', OP (MOMA_RC_1024), 0 } },
+    & ifmt_moma_mdmambmc1024, { 0x74000010 }
+  },
+/* moma.modmul512 $mD,$mA,$mB,$mC */
+  {
+    { 0, 0, 0, 0 },
+    { { MNEM, ' ', OP (MOMA_RD_512), ',', OP (MOMA_RA_512), ',', OP (MOMA_RB_512), ',', OP (MOMA_RC_512), 0 } },
+    & ifmt_moma_mdmambmc512, { 0x74000020 }
+  },
+/* moma.modmul256 $mD,$mA,$mB,$mC */
+  {
+    { 0, 0, 0, 0 },
+    { { MNEM, ' ', OP (MOMA_RD_256), ',', OP (MOMA_RA_256), ',', OP (MOMA_RB_256), ',', OP (MOMA_RC_256), 0 } },
+    & ifmt_moma_mdmambmc256, { 0x74000030 }
+  },
+/* moma.modexp $mD,$mA,$mB,$mC */
+  {
+    { 0, 0, 0, 0 },
+    { { MNEM, ' ', OP (MOMA_RD_1024), ',', OP (MOMA_RA_1024), ',', OP (MOMA_RB_1024), ',', OP (MOMA_RC_1024), 0 } },
+    & ifmt_moma_mdmambmc1024, { 0x74000011 }
+  },
+/* moma.modexp2048 $mD,$mA,$mB,$mC */
+  {
+    { 0, 0, 0, 0 },
+    { { MNEM, ' ', OP (MOMA_RD_2048), ',', OP (MOMA_RA_2048), ',', OP (MOMA_RB_2048), ',', OP (MOMA_RC_2048), 0 } },
+    & ifmt_moma_mdmambmc2048, { 0x74000001 }
+  },
+/* moma.modexp1024 $mD,$mA,$mB,$mC */
+  {
+    { 0, 0, 0, 0 },
+    { { MNEM, ' ', OP (MOMA_RD_1024), ',', OP (MOMA_RA_1024), ',', OP (MOMA_RB_1024), ',', OP (MOMA_RC_1024), 0 } },
+    & ifmt_moma_mdmambmc1024, { 0x74000011 }
+  },
+/* moma.modexp512 $mD,$mA,$mB,$mC */
+  {
+    { 0, 0, 0, 0 },
+    { { MNEM, ' ', OP (MOMA_RD_512), ',', OP (MOMA_RA_512), ',', OP (MOMA_RB_512), ',', OP (MOMA_RC_512), 0 } },
+    & ifmt_moma_mdmambmc512, { 0x74000021 }
+  },
+/* moma.modexp256 $mD,$mA,$mB,$mC */
+  {
+    { 0, 0, 0, 0 },
+    { { MNEM, ' ', OP (MOMA_RD_256), ',', OP (MOMA_RA_256), ',', OP (MOMA_RB_256), ',', OP (MOMA_RC_256), 0 } },
+    & ifmt_moma_mdmambmc256, { 0x74000031 }
+  },
+/* moma.g $mD,$mA,$mB,$mC */
+  {
+    { 0, 0, 0, 0 },
+    { { MNEM, ' ', OP (MOMA_RD_1024), ',', OP (MOMA_RA_1024), ',', OP (MOMA_RB_1024), ',', OP (MOMA_RC_1024), 0 } },
+    & ifmt_moma_mdmambmc1024, { 0x74000012 }
+  },
+/* moma.g2048 $mD,$mA,$mB,$mC */
+  {
+    { 0, 0, 0, 0 },
+    { { MNEM, ' ', OP (MOMA_RD_2048), ',', OP (MOMA_RA_2048), ',', OP (MOMA_RB_2048), ',', OP (MOMA_RC_2048), 0 } },
+    & ifmt_moma_mdmambmc2048, { 0x74000002 }
+  },
+/* moma.g1024 $mD,$mA,$mB,$mC */
+  {
+    { 0, 0, 0, 0 },
+    { { MNEM, ' ', OP (MOMA_RD_1024), ',', OP (MOMA_RA_1024), ',', OP (MOMA_RB_1024), ',', OP (MOMA_RC_1024), 0 } },
+    & ifmt_moma_mdmambmc1024, { 0x74000012 }
+  },
+/* moma.g512 $mD,$mA,$mB,$mC */
+  {
+    { 0, 0, 0, 0 },
+    { { MNEM, ' ', OP (MOMA_RD_512), ',', OP (MOMA_RA_512), ',', OP (MOMA_RB_512), ',', OP (MOMA_RC_512), 0 } },
+    & ifmt_moma_mdmambmc512, { 0x74000022 }
+  },
+/* moma.g256 $mD,$mA,$mB,$mC */
+  {
+    { 0, 0, 0, 0 },
+    { { MNEM, ' ', OP (MOMA_RD_256), ',', OP (MOMA_RA_256), ',', OP (MOMA_RB_256), ',', OP (MOMA_RC_256), 0 } },
+    & ifmt_moma_mdmambmc256, { 0x74000032 }
+  },
+/* moma.gcd $mD,$mA,$mB */
+  {
+    { 0, 0, 0, 0 },
+    { { MNEM, ' ', OP (MOMA_RD_1024), ',', OP (MOMA_RA_1024), ',', OP (MOMA_RB_1024), 0 } },
+    & ifmt_moma_mdmamb1024, { 0x74000013 }
+  },
+/* moma.gcd2048 $mD,$mA,$mB */
+  {
+    { 0, 0, 0, 0 },
+    { { MNEM, ' ', OP (MOMA_RD_2048), ',', OP (MOMA_RA_2048), ',', OP (MOMA_RB_2048), 0 } },
+    & ifmt_moma_mdmamb2048, { 0x74000003 }
+  },
+/* moma.gcd1024 $mD,$mA,$mB */
+  {
+    { 0, 0, 0, 0 },
+    { { MNEM, ' ', OP (MOMA_RD_1024), ',', OP (MOMA_RA_1024), ',', OP (MOMA_RB_1024), 0 } },
+    & ifmt_moma_mdmamb1024, { 0x74000013 }
+  },
+/* moma.gcd512 $mD,$mA,$mB */
+  {
+    { 0, 0, 0, 0 },
+    { { MNEM, ' ', OP (MOMA_RD_512), ',', OP (MOMA_RA_512), ',', OP (MOMA_RB_512), 0 } },
+    & ifmt_moma_mdmamb512, { 0x74000023 }
+  },
+/* moma.gcd256 $mD,$mA,$mB */
+  {
+    { 0, 0, 0, 0 },
+    { { MNEM, ' ', OP (MOMA_RD_256), ',', OP (MOMA_RA_256), ',', OP (MOMA_RB_256), 0 } },
+    & ifmt_moma_mdmamb256, { 0x74000033 }
+  },
+/* moma.inv $mD,$mA,$mB */
+  {
+    { 0, 0, 0, 0 },
+    { { MNEM, ' ', OP (MOMA_RD_1024), ',', OP (MOMA_RA_1024), ',', OP (MOMA_RB_1024), 0 } },
+    & ifmt_moma_mdmamb1024, { 0x74000014 }
+  },
+/* moma.inv2048 $mD,$mA,$mB */
+  {
+    { 0, 0, 0, 0 },
+    { { MNEM, ' ', OP (MOMA_RD_2048), ',', OP (MOMA_RA_2048), ',', OP (MOMA_RB_2048), 0 } },
+    & ifmt_moma_mdmamb2048, { 0x74000004 }
+  },
+/* moma.inv1024 $mD,$mA,$mB */
+  {
+    { 0, 0, 0, 0 },
+    { { MNEM, ' ', OP (MOMA_RD_1024), ',', OP (MOMA_RA_1024), ',', OP (MOMA_RB_1024), 0 } },
+    & ifmt_moma_mdmamb1024, { 0x74000014 }
+  },
+/* moma.inv512 $mD,$mA,$mB */
+  {
+    { 0, 0, 0, 0 },
+    { { MNEM, ' ', OP (MOMA_RD_512), ',', OP (MOMA_RA_512), ',', OP (MOMA_RB_512), 0 } },
+    & ifmt_moma_mdmamb512, { 0x74000024 }
+  },
+/* moma.inv256 $mD,$mA,$mB */
+  {
+    { 0, 0, 0, 0 },
+    { { MNEM, ' ', OP (MOMA_RD_256), ',', OP (MOMA_RA_256), ',', OP (MOMA_RB_256), 0 } },
+    & ifmt_moma_mdmamb256, { 0x74000034 }
+  },
+/* moma.invgcd $mD,$mA,$mB,$mC */
+  {
+    { 0, 0, 0, 0 },
+    { { MNEM, ' ', OP (MOMA_RD_1024), ',', OP (MOMA_RA_1024), ',', OP (MOMA_RB_1024), ',', OP (MOMA_RC_1024), 0 } },
+    & ifmt_moma_mdmambmc1024, { 0x74000015 }
+  },
+/* moma.invgcd2048 $mD,$mA,$mB,$mC */
+  {
+    { 0, 0, 0, 0 },
+    { { MNEM, ' ', OP (MOMA_RD_2048), ',', OP (MOMA_RA_2048), ',', OP (MOMA_RB_2048), ',', OP (MOMA_RC_2048), 0 } },
+    & ifmt_moma_mdmambmc2048, { 0x74000005 }
+  },
+/* moma.invgcd1024 $mD,$mA,$mB,$mC */
+  {
+    { 0, 0, 0, 0 },
+    { { MNEM, ' ', OP (MOMA_RD_1024), ',', OP (MOMA_RA_1024), ',', OP (MOMA_RB_1024), ',', OP (MOMA_RC_1024), 0 } },
+    & ifmt_moma_mdmambmc1024, { 0x74000015 }
+  },
+/* moma.invgcd512 $mD,$mA,$mB,$mC */
+  {
+    { 0, 0, 0, 0 },
+    { { MNEM, ' ', OP (MOMA_RD_512), ',', OP (MOMA_RA_512), ',', OP (MOMA_RB_512), ',', OP (MOMA_RC_512), 0 } },
+    & ifmt_moma_mdmambmc512, { 0x74000025 }
+  },
+/* moma.invgcd256 $mD,$mA,$mB,$mC */
+  {
+    { 0, 0, 0, 0 },
+    { { MNEM, ' ', OP (MOMA_RD_256), ',', OP (MOMA_RA_256), ',', OP (MOMA_RB_256), ',', OP (MOMA_RC_256), 0 } },
+    & ifmt_moma_mdmambmc256, { 0x74000035 }
   },
 /* moma.mtmr $mD($uimm16),$rA */
   {
     { 0, 0, 0, 0 },
-    { { MNEM, ' ', OP (MOMA_RD), ',', OP (MOMA_RA), ',', OP (MOMA_RB), 0 } },
-    & ifmt_l_rfe, { 0x74000001 }
+    { { MNEM, ' ', OP (MOMA_RD_1024), '(', OP (MOMA_UIMM5), ')', ',', OP (RA), 0 } },
+    & ifmt_moma_mdrauimm1024, { 0x74000016 }
+  },
+/* moma.mtmr2048 $mD($uimm16),$rA */
+  {
+    { 0, 0, 0, 0 },
+    { { MNEM, ' ', OP (MOMA_RD_2048), '(', OP (MOMA_UIMM6), ')', ',', OP (RA), 0 } },
+    & ifmt_moma_mdrauimm2048, { 0x74000006 }
+  },
+/* moma.mtmr1024 $mD($uimm16),$rA */
+  {
+    { 0, 0, 0, 0 },
+    { { MNEM, ' ', OP (MOMA_RD_1024), '(', OP (MOMA_UIMM5), ')', ',', OP (RA), 0 } },
+    & ifmt_moma_mdrauimm1024, { 0x74000016 }
+  },
+/* moma.mtmr512 $mD($uimm16),$rA */
+  {
+    { 0, 0, 0, 0 },
+    { { MNEM, ' ', OP (MOMA_RD_512), '(', OP (MOMA_UIMM4), ')', ',', OP (RA), 0 } },
+    & ifmt_moma_mdrauimm512, { 0x74000026 }
+  },
+/* moma.mtmr256 $mD($uimm16),$rA */
+  {
+    { 0, 0, 0, 0 },
+    { { MNEM, ' ', OP (MOMA_RD_256), '(', OP (MOMA_UIMM3), ')', ',', OP (RA), 0 } },
+    & ifmt_moma_mdrauimm256, { 0x74000036 }
+  },
+/* moma.mfmr $rD,$mA($uimm16) */
+  {
+    { 0, 0, 0, 0 },
+    { { MNEM, ' ', OP (RD), ',', OP (MOMA_RA_1024), '(', OP (MOMA_UIMM5), ')', 0 } },
+    & ifmt_moma_rdmauimm1024, { 0x74000017 }
+  },
+/* moma.mfmr2048 $rD,$mA($uimm16) */
+  {
+    { 0, 0, 0, 0 },
+    { { MNEM, ' ', OP (RD), ',', OP (MOMA_RA_2048), '(', OP (MOMA_UIMM6), ')', 0 } },
+    & ifmt_moma_rdmauimm2048, { 0x74000007 }
+  },
+/* moma.mfmr1024 $rD,$mA($uimm16) */
+  {
+    { 0, 0, 0, 0 },
+    { { MNEM, ' ', OP (RD), ',', OP (MOMA_RA_1024), '(', OP (MOMA_UIMM5), ')', 0 } },
+    & ifmt_moma_rdmauimm1024, { 0x74000017 }
+  },
+/* moma.mfmr512 $rD,$mA($uimm16) */
+  {
+    { 0, 0, 0, 0 },
+    { { MNEM, ' ', OP (RD), ',', OP (MOMA_RA_512), '(', OP (MOMA_UIMM4), ')', 0 } },
+    & ifmt_moma_rdmauimm512, { 0x74000027 }
+  },
+/* moma.mfmr256 $rD,$mA($uimm16) */
+  {
+    { 0, 0, 0, 0 },
+    { { MNEM, ' ', OP (RD), ',', OP (MOMA_RA_256), '(', OP (MOMA_UIMM3), ')', 0 } },
+    & ifmt_moma_rdmauimm256, { 0x74000037 }
   },
 /** backup begin **/
 /* l.cust1 *

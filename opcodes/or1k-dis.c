@@ -112,17 +112,65 @@ or1k_cgen_print_operand (CGEN_CPU_DESC cd,
       print_keyword (cd, info, & or1k_cgen_opval_h_fsr, fields->f_r3, 0);
       break;
 /** MoMA begin **/
-    case OR1K_OPERAND_MOMA_RD :
-      print_keyword (cd, info, & or1k_cgen_opval_h_momareg, fields->f_r1, 0);
+    case OR1K_OPERAND_MOMA_RD_2048 :
+      print_keyword (cd, info, & or1k_cgen_opval_h_momareg2048, fields->f_r1, 0);
       break;
-    case OR1K_OPERAND_MOMA_RA :
-      print_keyword (cd, info, & or1k_cgen_opval_h_momareg, fields->f_r2, 0);
+    case OR1K_OPERAND_MOMA_RA_2048 :
+      print_keyword (cd, info, & or1k_cgen_opval_h_momareg2048, fields->f_r2, 0);
       break;
-    case OR1K_OPERAND_MOMA_RB :
-      print_keyword (cd, info, & or1k_cgen_opval_h_momareg, fields->f_r3, 0);
+    case OR1K_OPERAND_MOMA_RB_2048 :
+      print_keyword (cd, info, & or1k_cgen_opval_h_momareg2048, fields->f_r3, 0);
       break;
-    case OR1K_OPERAND_MOMA_RC :
-      print_keyword (cd, info, & or1k_cgen_opval_h_momareg, fields->f_r4, 0);
+    case OR1K_OPERAND_MOMA_RC_2048 :
+      print_keyword (cd, info, & or1k_cgen_opval_h_momareg2048, fields->f_r4, 0);
+      break;
+    case OR1K_OPERAND_MOMA_RD_1024 :
+      print_keyword (cd, info, & or1k_cgen_opval_h_momareg1024, fields->f_r1, 0);
+      break;
+    case OR1K_OPERAND_MOMA_RA_1024 :
+      print_keyword (cd, info, & or1k_cgen_opval_h_momareg1024, fields->f_r2, 0);
+      break;
+    case OR1K_OPERAND_MOMA_RB_1024 :
+      print_keyword (cd, info, & or1k_cgen_opval_h_momareg1024, fields->f_r3, 0);
+      break;
+    case OR1K_OPERAND_MOMA_RC_1024 :
+      print_keyword (cd, info, & or1k_cgen_opval_h_momareg1024, fields->f_r4, 0);
+      break;
+    case OR1K_OPERAND_MOMA_RD_512 :
+      print_keyword (cd, info, & or1k_cgen_opval_h_momareg512, fields->f_r1, 0);
+      break;
+    case OR1K_OPERAND_MOMA_RA_512 :
+      print_keyword (cd, info, & or1k_cgen_opval_h_momareg512, fields->f_r2, 0);
+      break;
+    case OR1K_OPERAND_MOMA_RB_512 :
+      print_keyword (cd, info, & or1k_cgen_opval_h_momareg512, fields->f_r3, 0);
+      break;
+    case OR1K_OPERAND_MOMA_RC_512 :
+      print_keyword (cd, info, & or1k_cgen_opval_h_momareg512, fields->f_r4, 0);
+      break;
+    case OR1K_OPERAND_MOMA_RD_256 :
+      print_keyword (cd, info, & or1k_cgen_opval_h_momareg256, fields->f_r1, 0);
+      break;
+    case OR1K_OPERAND_MOMA_RA_256 :
+      print_keyword (cd, info, & or1k_cgen_opval_h_momareg256, fields->f_r2, 0);
+      break;
+    case OR1K_OPERAND_MOMA_RB_256 :
+      print_keyword (cd, info, & or1k_cgen_opval_h_momareg256, fields->f_r3, 0);
+      break;
+    case OR1K_OPERAND_MOMA_RC_256 :
+      print_keyword (cd, info, & or1k_cgen_opval_h_momareg256, fields->f_r4, 0);
+      break;
+    case OR1K_OPERAND_MOMA_UIMM6 :
+      print_normal (cd, info, fields->f_uimm6, 0, pc, length);
+      break;
+    case OR1K_OPERAND_MOMA_UIMM5 :
+      print_normal (cd, info, fields->f_uimm6, 0, pc, length);
+      break;
+    case OR1K_OPERAND_MOMA_UIMM4 :
+      print_normal (cd, info, fields->f_uimm6, 0, pc, length);
+      break;
+    case OR1K_OPERAND_MOMA_UIMM3 :
+      print_normal (cd, info, fields->f_uimm6, 0, pc, length);
       break;
 /** MoMA end **/
     case OR1K_OPERAND_RD :
