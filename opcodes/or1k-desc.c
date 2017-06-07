@@ -1939,31 +1939,6 @@ static const CGEN_IBASE or1k_cgen_insn_table[MAX_INSNS] =
     OR1K_INSN_L_MOMA_INV256, "moma-inv256", "moma.inv256", 32,
     { 0, { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }
   },
-/* moma.invgcd $mD,$mA,$mB,$mC */
-  {
-    OR1K_INSN_L_MOMA_INVGCD, "moma-invgcd", "moma.invgcd", 32,
-    { 0, { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }
-  },
-/* moma.invgcd2048 $mD,$mA,$mB,$mC */
-  {
-    OR1K_INSN_L_MOMA_INVGCD2048, "moma-invgcd2048", "moma.invgcd2048", 32,
-    { 0, { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }
-  },
-/* moma.invgcd1024 $mD,$mA,$mB,$mC */
-  {
-    OR1K_INSN_L_MOMA_INVGCD1024, "moma-invgcd1024", "moma.invgcd1024", 32,
-    { 0, { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }
-  },
-/* moma.invgcd512 $mD,$mA,$mB,$mC */
-  {
-    OR1K_INSN_L_MOMA_INVGCD512, "moma-invgcd512", "moma.invgcd512", 32,
-    { 0, { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }
-  },
-/* moma.invgcd256 $mD,$mA,$mB,$mC */
-  {
-    OR1K_INSN_L_MOMA_INVGCD256, "moma-invgcd256", "moma.invgcd256", 32,
-    { 0, { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }
-  },
 /* moma.mtmr $mD(uimm6),$rA */
   {
     OR1K_INSN_L_MOMA_MTMR, "moma-mtmr", "moma.mtmr", 32,
@@ -2012,6 +1987,56 @@ static const CGEN_IBASE or1k_cgen_insn_table[MAX_INSNS] =
 /* moma.mfmr256 $rD,$mA(uimm6) */
   {
     OR1K_INSN_L_MOMA_MFMR256, "moma-mfmr256", "moma.mfmr256", 32,
+    { 0, { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }
+  },
+/* moma.rand $mD,$mA,$mB */
+  {
+    OR1K_INSN_L_MOMA_RAND, "moma-rand", "moma.rand", 32,
+    { 0, { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }
+  },
+/* moma.rand2048 $mD,$mA,$mB */
+  {
+    OR1K_INSN_L_MOMA_RAND2048, "moma-rand2048", "moma.rand2048", 32,
+    { 0, { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }
+  },
+/* moma.rand1024 $mD,$mA,$mB */
+  {
+    OR1K_INSN_L_MOMA_RAND1024, "moma-rand1024", "moma.rand1024", 32,
+    { 0, { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }
+  },
+/* moma.rand512 $mD,$mA,$mB */
+  {
+    OR1K_INSN_L_MOMA_RAND512, "moma-rand512", "moma.rand512", 32,
+    { 0, { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }
+  },
+/* moma.rand256 $mD,$mA,$mB */
+  {
+    OR1K_INSN_L_MOMA_RAND256, "moma-rand256", "moma.rand256", 32,
+    { 0, { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }
+  },
+/* moma.nrand $mD,$mA,$mB */
+  {
+    OR1K_INSN_L_MOMA_NRAND, "moma-nrand", "moma.nrand", 32,
+    { 0, { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }
+  },
+/* moma.nrand2048 $mD,$mA,$mB */
+  {
+    OR1K_INSN_L_MOMA_NRAND2048, "moma-nrand2048", "moma.nrand2048", 32,
+    { 0, { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }
+  },
+/* moma.nrand1024 $mD,$mA,$mB */
+  {
+    OR1K_INSN_L_MOMA_NRAND1024, "moma-nrand1024", "moma.nrand1024", 32,
+    { 0, { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }
+  },
+/* moma.nrand512 $mD,$mA,$mB */
+  {
+    OR1K_INSN_L_MOMA_NRAND, "moma-nrand512", "moma.nrand512", 32,
+    { 0, { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }
+  },
+/* moma.nrand256 $mD,$mA,$mB */
+  {
+    OR1K_INSN_L_MOMA_NRAND, "moma-nrand256", "moma.nrand256", 32,
     { 0, { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }
   },
 /** backup begin **/
