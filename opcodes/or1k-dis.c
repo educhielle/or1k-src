@@ -167,16 +167,16 @@ or1k_cgen_print_operand (CGEN_CPU_DESC cd,
       break;
 
     case OR1K_OPERAND_MOMA_UIMM7 :
-      print_normal (cd, info, fields->f_uimm6, 0, pc, length);
+      print_normal (cd, info, fields->f_uimm7, 0, pc, length);
       break;
     case OR1K_OPERAND_MOMA_UIMM6 :
-      print_normal (cd, info, fields->f_uimm6, 0, pc, length);
+      print_normal (cd, info, fields->f_uimm7, 0, pc, length);
       break;
     case OR1K_OPERAND_MOMA_UIMM5 :
-      print_normal (cd, info, fields->f_uimm6, 0, pc, length);
+      print_normal (cd, info, fields->f_uimm7, 0, pc, length);
       break;
     case OR1K_OPERAND_MOMA_UIMM4 :
-      print_normal (cd, info, fields->f_uimm6, 0, pc, length);
+      print_normal (cd, info, fields->f_uimm7, 0, pc, length);
       break;
 
 /** MoMA end **/

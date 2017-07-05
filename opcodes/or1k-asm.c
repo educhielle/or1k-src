@@ -530,16 +530,16 @@ or1k_cgen_parse_operand (CGEN_CPU_DESC cd,
       break;
 
     case OR1K_OPERAND_MOMA_UIMM7 :
-      errmsg = cgen_parse_unsigned_integer (cd, strp, OR1K_OPERAND_MOMA_UIMM7, (unsigned long *) (& fields->f_uimm6));
+      errmsg = cgen_parse_unsigned_integer (cd, strp, OR1K_OPERAND_MOMA_UIMM7, (unsigned long *) (& fields->f_uimm7));
       break;
     case OR1K_OPERAND_MOMA_UIMM6 :
-      errmsg = cgen_parse_unsigned_integer (cd, strp, OR1K_OPERAND_MOMA_UIMM6, (unsigned long *) (& fields->f_uimm6));
+      errmsg = cgen_parse_unsigned_integer (cd, strp, OR1K_OPERAND_MOMA_UIMM6, (unsigned long *) (& fields->f_uimm7));
       break;
     case OR1K_OPERAND_MOMA_UIMM5 :
-      errmsg = cgen_parse_unsigned_integer (cd, strp, OR1K_OPERAND_MOMA_UIMM5, (unsigned long *) (& fields->f_uimm6));
+      errmsg = cgen_parse_unsigned_integer (cd, strp, OR1K_OPERAND_MOMA_UIMM5, (unsigned long *) (& fields->f_uimm7));
       break;
     case OR1K_OPERAND_MOMA_UIMM4 :
-      errmsg = cgen_parse_unsigned_integer (cd, strp, OR1K_OPERAND_MOMA_UIMM4, (unsigned long *) (& fields->f_uimm6));
+      errmsg = cgen_parse_unsigned_integer (cd, strp, OR1K_OPERAND_MOMA_UIMM4, (unsigned long *) (& fields->f_uimm7));
       break;
 
 /** MoMA end **/

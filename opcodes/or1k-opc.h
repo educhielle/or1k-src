@@ -130,6 +130,9 @@ struct cgen_fields
   long f_uimm16;
   long f_simm16;
   long f_uimm6;
+/** MoMA begin **/
+  long f_uimm7;
+/** MoMA end **/
   long f_uimm16_split;
   long f_simm16_split;
 };

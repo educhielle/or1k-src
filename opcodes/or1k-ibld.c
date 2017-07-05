@@ -647,16 +647,16 @@ or1k_cgen_insert_operand (CGEN_CPU_DESC cd,
       break;
 
     case OR1K_OPERAND_MOMA_UIMM7 :
-      errmsg = insert_normal (cd, fields->f_uimm6, 0, 0, 15, 7, 32, total_length, buffer);
+      errmsg = insert_normal (cd, fields->f_uimm7, 0, 0, 15, 7, 32, total_length, buffer);
       break;
     case OR1K_OPERAND_MOMA_UIMM6 :
-      errmsg = insert_normal (cd, fields->f_uimm6, 0, 0, 14, 6, 32, total_length, buffer);
+      errmsg = insert_normal (cd, fields->f_uimm7, 0, 0, 14, 6, 32, total_length, buffer);
       break;
     case OR1K_OPERAND_MOMA_UIMM5 :
-      errmsg = insert_normal (cd, fields->f_uimm6, 0, 0, 13, 5, 32, total_length, buffer);
+      errmsg = insert_normal (cd, fields->f_uimm7, 0, 0, 13, 5, 32, total_length, buffer);
       break;
     case OR1K_OPERAND_MOMA_UIMM4 :
-      errmsg = insert_normal (cd, fields->f_uimm6, 0, 0, 12, 4, 32, total_length, buffer);
+      errmsg = insert_normal (cd, fields->f_uimm7, 0, 0, 12, 4, 32, total_length, buffer);
       break;
 
 /** MoMA end **/
@@ -831,16 +831,16 @@ or1k_cgen_extract_operand (CGEN_CPU_DESC cd,
       break;
 
     case OR1K_OPERAND_MOMA_UIMM7 :
-      length = extract_normal (cd, ex_info, insn_value, 0, 0, 15, 7, 32, total_length, pc, & fields->f_uimm6);
+      length = extract_normal (cd, ex_info, insn_value, 0, 0, 15, 7, 32, total_length, pc, & fields->f_uimm7);
       break;
     case OR1K_OPERAND_MOMA_UIMM6 :
-      length = extract_normal (cd, ex_info, insn_value, 0, 0, 14, 6, 32, total_length, pc, & fields->f_uimm6);
+      length = extract_normal (cd, ex_info, insn_value, 0, 0, 14, 6, 32, total_length, pc, & fields->f_uimm7);
       break;
     case OR1K_OPERAND_MOMA_UIMM5 :
-      length = extract_normal (cd, ex_info, insn_value, 0, 0, 13, 5, 32, total_length, pc, & fields->f_uimm6);
+      length = extract_normal (cd, ex_info, insn_value, 0, 0, 13, 5, 32, total_length, pc, & fields->f_uimm7);
       break;
     case OR1K_OPERAND_MOMA_UIMM4 :
-      length = extract_normal (cd, ex_info, insn_value, 0, 0, 12, 4, 32, total_length, pc, & fields->f_uimm6);
+      length = extract_normal (cd, ex_info, insn_value, 0, 0, 12, 4, 32, total_length, pc, & fields->f_uimm7);
       break;
 
 /** MoMA end **/
@@ -996,16 +996,16 @@ or1k_cgen_get_int_operand (CGEN_CPU_DESC cd ATTRIBUTE_UNUSED,
       break;
 
     case OR1K_OPERAND_MOMA_UIMM7 :
-      value = fields->f_uimm6;
+      value = fields->f_uimm7;
       break;
     case OR1K_OPERAND_MOMA_UIMM6 :
-      value = fields->f_uimm6;
+      value = fields->f_uimm7;
       break;
     case OR1K_OPERAND_MOMA_UIMM5 :
-      value = fields->f_uimm6;
+      value = fields->f_uimm7;
       break;
     case OR1K_OPERAND_MOMA_UIMM4 :
-      value = fields->f_uimm6;
+      value = fields->f_uimm7;
       break;
 
 /** MoMA end **/
@@ -1131,16 +1131,16 @@ or1k_cgen_get_vma_operand (CGEN_CPU_DESC cd ATTRIBUTE_UNUSED,
       break;
 
     case OR1K_OPERAND_MOMA_UIMM7 :
-      value = fields->f_uimm6;
+      value = fields->f_uimm7;
       break;
     case OR1K_OPERAND_MOMA_UIMM6 :
-      value = fields->f_uimm6;
+      value = fields->f_uimm7;
       break;
     case OR1K_OPERAND_MOMA_UIMM5 :
-      value = fields->f_uimm6;
+      value = fields->f_uimm7;
       break;
     case OR1K_OPERAND_MOMA_UIMM4 :
-      value = fields->f_uimm6;
+      value = fields->f_uimm7;
       break;
 
 /** MoMA end **/
@@ -1273,16 +1273,16 @@ or1k_cgen_set_int_operand (CGEN_CPU_DESC cd ATTRIBUTE_UNUSED,
       break;
 
     case OR1K_OPERAND_MOMA_UIMM7 :
-      fields->f_uimm6 = value;
+      fields->f_uimm7 = value;
       break;
     case OR1K_OPERAND_MOMA_UIMM6 :
-      fields->f_uimm6 = value;
+      fields->f_uimm7 = value;
       break;
     case OR1K_OPERAND_MOMA_UIMM5 :
-      fields->f_uimm6 = value;
+      fields->f_uimm7 = value;
       break;
     case OR1K_OPERAND_MOMA_UIMM4 :
-      fields->f_uimm6 = value;
+      fields->f_uimm7 = value;
       break;
 
 /** MoMA end **/
@@ -1405,16 +1405,16 @@ or1k_cgen_set_vma_operand (CGEN_CPU_DESC cd ATTRIBUTE_UNUSED,
       break;
 
     case OR1K_OPERAND_MOMA_UIMM7 :
-      fields->f_uimm6 = value;
+      fields->f_uimm7 = value;
       break;
     case OR1K_OPERAND_MOMA_UIMM6 :
-      fields->f_uimm6 = value;
+      fields->f_uimm7 = value;
       break;
     case OR1K_OPERAND_MOMA_UIMM5 :
-      fields->f_uimm6 = value;
+      fields->f_uimm7 = value;
       break;
     case OR1K_OPERAND_MOMA_UIMM4 :
-      fields->f_uimm6 = value;
+      fields->f_uimm7 = value;
       break;
 
 /** MoMA end **/
