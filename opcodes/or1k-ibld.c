@@ -595,16 +595,16 @@ or1k_cgen_insert_operand (CGEN_CPU_DESC cd,
 /** MoMA begin **/
 
     case OR1K_OPERAND_MOMA_RD_4096 :
-      errmsg = insert_normal (cd, fields->f_r1, 0, 0, 22, 2, 32, total_length, buffer);
+      errmsg = insert_normal (cd, fields->f_r1, 0, 0, 24, 4, 32, total_length, buffer);
       break;
     case OR1K_OPERAND_MOMA_RA_4096 :
-      errmsg = insert_normal (cd, fields->f_r2, 0, 0, 17, 2, 32, total_length, buffer);
+      errmsg = insert_normal (cd, fields->f_r2, 0, 0, 19, 4, 32, total_length, buffer);
       break;
     case OR1K_OPERAND_MOMA_RB_4096 :
-      errmsg = insert_normal (cd, fields->f_r3, 0, 0, 12, 2, 32, total_length, buffer);
+      errmsg = insert_normal (cd, fields->f_r3, 0, 0, 14, 4, 32, total_length, buffer);
       break;
     case OR1K_OPERAND_MOMA_RC_4096 :
-      errmsg = insert_normal (cd, fields->f_r4, 0, 0, 7, 2, 32, total_length, buffer);
+      errmsg = insert_normal (cd, fields->f_r4, 0, 0, 9, 4, 32, total_length, buffer);
       break;
 
     case OR1K_OPERAND_MOMA_RD_2048 :
@@ -645,6 +645,22 @@ or1k_cgen_insert_operand (CGEN_CPU_DESC cd,
     case OR1K_OPERAND_MOMA_RC_512 :
       errmsg = insert_normal (cd, fields->f_r4, 0, 0, 7, 2, 32, total_length, buffer);
       break;
+
+    case OR1K_OPERAND_MOMA_UIMM7_SPLIT :
+      {
+{
+  FLD (f_uimm7_15_6) = ((((UINT) (FLD (f_uimm7_split)) >> (1))) & (63));
+  FLD (f_uimm7_7_1) = ((FLD (f_uimm7_split)) & (1));
+}
+        errmsg = insert_normal (cd, fields->f_uimm7_7_1, 0, 0, 7, 1, 32, total_length, buffer);
+        if (errmsg)
+          break;
+        errmsg = insert_normal (cd, fields->f_uimm7_15_6, 0, 0, 15, 6, 32, total_length, buffer);
+        if (errmsg)
+          break;
+      }
+      break;
+
 
     case OR1K_OPERAND_MOMA_UIMM7 :
       errmsg = insert_normal (cd, fields->f_uimm7, 0, 0, 15, 7, 32, total_length, buffer);
@@ -779,16 +795,16 @@ or1k_cgen_extract_operand (CGEN_CPU_DESC cd,
 /** MoMA begin **/
 
     case OR1K_OPERAND_MOMA_RD_4096 :
-      length = extract_normal (cd, ex_info, insn_value, 0, 0, 22, 2, 32, total_length, pc, & fields->f_r1);
+      length = extract_normal (cd, ex_info, insn_value, 0, 0, 24, 4, 32, total_length, pc, & fields->f_r1);
       break;
     case OR1K_OPERAND_MOMA_RA_4096 :
-      length = extract_normal (cd, ex_info, insn_value, 0, 0, 17, 2, 32, total_length, pc, & fields->f_r2);
+      length = extract_normal (cd, ex_info, insn_value, 0, 0, 19, 4, 32, total_length, pc, & fields->f_r2);
       break;
     case OR1K_OPERAND_MOMA_RB_4096 :
-      length = extract_normal (cd, ex_info, insn_value, 0, 0, 12, 2, 32, total_length, pc, & fields->f_r3);
+      length = extract_normal (cd, ex_info, insn_value, 0, 0, 14, 4, 32, total_length, pc, & fields->f_r3);
       break;
     case OR1K_OPERAND_MOMA_RC_4096 :
-      length = extract_normal (cd, ex_info, insn_value, 0, 0, 7, 2, 32, total_length, pc, & fields->f_r4);
+      length = extract_normal (cd, ex_info, insn_value, 0, 0, 9, 4, 32, total_length, pc, & fields->f_r4);
       break;
 
     case OR1K_OPERAND_MOMA_RD_2048 :
@@ -828,6 +844,16 @@ or1k_cgen_extract_operand (CGEN_CPU_DESC cd,
       break;
     case OR1K_OPERAND_MOMA_RC_512 :
       length = extract_normal (cd, ex_info, insn_value, 0, 0, 7, 2, 32, total_length, pc, & fields->f_r4);
+      break;
+
+    case OR1K_OPERAND_MOMA_UIMM7_SPLIT :
+      {
+        length = extract_normal (cd, ex_info, insn_value, 0, 0, 15, 6, 32, total_length, pc, & fields->f_uimm7_15_6);
+        if (length <= 0) break;
+        length = extract_normal (cd, ex_info, insn_value, 0, 0, 7, 1, 32, total_length, pc, & fields->f_uimm7_7_1);
+        if (length <= 0) break;
+  FLD (f_uimm7_split) = ((UHI) (UINT) (((((FLD (f_uimm7_15_6)) << (1))) | (FLD (f_uimm7_7_1)))));
+      }
       break;
 
     case OR1K_OPERAND_MOMA_UIMM7 :
@@ -995,6 +1021,10 @@ or1k_cgen_get_int_operand (CGEN_CPU_DESC cd ATTRIBUTE_UNUSED,
       value = fields->f_r4;
       break;
 
+    case OR1K_OPERAND_MOMA_UIMM7_SPLIT :
+      value = fields->f_uimm7_split;
+      break;
+
     case OR1K_OPERAND_MOMA_UIMM7 :
       value = fields->f_uimm7;
       break;
@@ -1128,6 +1158,10 @@ or1k_cgen_get_vma_operand (CGEN_CPU_DESC cd ATTRIBUTE_UNUSED,
       break;
     case OR1K_OPERAND_MOMA_RC_512 :
       value = fields->f_r4;
+      break;
+
+    case OR1K_OPERAND_MOMA_UIMM7_SPLIT :
+      value = fields->f_uimm7_split;
       break;
 
     case OR1K_OPERAND_MOMA_UIMM7 :
@@ -1272,6 +1306,10 @@ or1k_cgen_set_int_operand (CGEN_CPU_DESC cd ATTRIBUTE_UNUSED,
       fields->f_r4 = value;
       break;
 
+   case OR1K_OPERAND_MOMA_UIMM7_SPLIT :
+      fields->f_uimm7_split = value;
+      break;
+
     case OR1K_OPERAND_MOMA_UIMM7 :
       fields->f_uimm7 = value;
       break;
@@ -1402,6 +1440,10 @@ or1k_cgen_set_vma_operand (CGEN_CPU_DESC cd ATTRIBUTE_UNUSED,
       break;
     case OR1K_OPERAND_MOMA_RC_512 :
       fields->f_r4 = value;
+      break;
+
+   case OR1K_OPERAND_MOMA_UIMM7_SPLIT :
+      fields->f_uimm7_split = value;
       break;
 
     case OR1K_OPERAND_MOMA_UIMM7 :

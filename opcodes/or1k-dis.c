@@ -166,6 +166,10 @@ or1k_cgen_print_operand (CGEN_CPU_DESC cd,
       print_keyword (cd, info, & or1k_cgen_opval_h_momareg512, fields->f_r4, 0);
       break;
 
+    case OR1K_OPERAND_MOMA_UIMM7_SPLIT :
+      print_normal (cd, info, fields->f_uimm7_split, 0|(1<<CGEN_OPERAND_VIRTUAL), pc, length);
+      break;
+
     case OR1K_OPERAND_MOMA_UIMM7 :
       print_normal (cd, info, fields->f_uimm7, 0, pc, length);
       break;

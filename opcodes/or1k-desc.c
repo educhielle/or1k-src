@@ -272,18 +272,31 @@ CGEN_KEYWORD or1k_cgen_opval_h_gpr =
 };
 
 /** MoMA begin **/
+
 static CGEN_KEYWORD_ENTRY or1k_cgen_opval_h_momareg4096_entries[] =
 {
   { "ze0", 0, {0, {{{0, 0}}}}, 0, 0 },
   { "ze1", 1, {0, {{{0, 0}}}}, 0, 0 },
   { "ze2", 2, {0, {{{0, 0}}}}, 0, 0 },
-  { "ze3", 3, {0, {{{0, 0}}}}, 0, 0 }
+  { "ze3", 3, {0, {{{0, 0}}}}, 0, 0 },
+  { "ze4", 4, {0, {{{0, 0}}}}, 0, 0 },
+  { "ze5", 5, {0, {{{0, 0}}}}, 0, 0 },
+  { "ze6", 6, {0, {{{0, 0}}}}, 0, 0 },
+  { "ze7", 7, {0, {{{0, 0}}}}, 0, 0 },
+  { "ze8", 8, {0, {{{0, 0}}}}, 0, 0 },
+  { "ze9", 9, {0, {{{0, 0}}}}, 0, 0 },
+  { "ze10", 10, {0, {{{0, 0}}}}, 0, 0 },
+  { "ze11", 11, {0, {{{0, 0}}}}, 0, 0 },
+  { "ze12", 12, {0, {{{0, 0}}}}, 0, 0 },
+  { "ze13", 13, {0, {{{0, 0}}}}, 0, 0 },
+  { "ze14", 14, {0, {{{0, 0}}}}, 0, 0 },
+  { "ze15", 15, {0, {{{0, 0}}}}, 0, 0 }
 };
 
 CGEN_KEYWORD or1k_cgen_opval_h_momareg4096 =
 {
   & or1k_cgen_opval_h_momareg4096_entries[0],
-  4,
+  16,
   0, 0, 0, 0, ""
 };
 
@@ -1010,10 +1023,10 @@ const CGEN_IFLD or1k_cgen_ifld_table[] =
   { OR1K_F_R2, "f-r2", 0, 32, 20, 5, { 0, { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }  },
   { OR1K_F_R3, "f-r3", 0, 32, 15, 5, { 0, { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }  },
 /** MoMA begin **/
-  { OR1K_F_MOMA_R1_4096, "f-moma-r1-4096", 0, 32, 22, 2, { 0, { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }  },
-  { OR1K_F_MOMA_R2_4096, "f-moma-r2-4096", 0, 32, 17, 2, { 0, { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }  },
-  { OR1K_F_MOMA_R3_4096, "f-moma-r3-4096", 0, 32, 12, 2, { 0, { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }  },
-  { OR1K_F_MOMA_R4_4096, "f-moma-r4-4096", 0, 32, 7, 2, { 0, { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }  },
+  { OR1K_F_MOMA_R1_4096, "f-moma-r1-4096", 0, 32, 24, 4, { 0, { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }  },
+  { OR1K_F_MOMA_R2_4096, "f-moma-r2-4096", 0, 32, 19, 4, { 0, { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }  },
+  { OR1K_F_MOMA_R3_4096, "f-moma-r3-4096", 0, 32, 14, 4, { 0, { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }  },
+  { OR1K_F_MOMA_R4_4096, "f-moma-r4-4096", 0, 32, 9, 4, { 0, { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }  },
   { OR1K_F_MOMA_R1_2048, "f-moma-r1-2048", 0, 32, 22, 2, { 0, { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }  },
   { OR1K_F_MOMA_R2_2048, "f-moma-r2-2048", 0, 32, 17, 2, { 0, { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }  },
   { OR1K_F_MOMA_R3_2048, "f-moma-r3-2048", 0, 32, 12, 2, { 0, { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }  },
@@ -1026,11 +1039,16 @@ const CGEN_IFLD or1k_cgen_ifld_table[] =
   { OR1K_F_MOMA_R2_512, "f-moma-r2-512", 0, 32, 17, 2, { 0, { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }  },
   { OR1K_F_MOMA_R3_512, "f-moma-r3-512", 0, 32, 12, 2, { 0, { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }  },
   { OR1K_F_MOMA_R4_512, "f-moma-r4-512", 0, 32, 7, 2, { 0, { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }  },
+  { OR1K_F_MOMA_UIMM7_15_6, "f-moma-uimm7-15-6", 0, 32, 15, 6, { 0, { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }  },
+  { OR1K_F_MOMA_UIMM7_7_1, "f-moma-uimm7-7-1", 0, 32, 7, 1, { 0, { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }  },
+  { OR1K_F_MOMA_UIMM7_SPLIT, "f-moma-uimm7-split", 0, 0, 0, 0,{ 0|A(VIRTUAL), { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }  }, 
   { OR1K_F_MOMA_UIMM7, "f-moma-uimm7", 0, 32, 15, 7, { 0, { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }  },
   { OR1K_F_MOMA_UIMM6, "f-moma-uimm6", 0, 32, 14, 6, { 0, { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }  },
   { OR1K_F_MOMA_UIMM5, "f-moma-uimm5", 0, 32, 13, 5, { 0, { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }  },
   { OR1K_F_MOMA_UIMM4, "f-moma-uimm4", 0, 32, 12, 4, { 0, { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }  },
   { OR1K_F_MOMA_OP_5_6, "f-moma-op-5-6", 0, 32, 5, 6, { 0, { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }  },
+  { OR1K_F_MOMA_OP_9_2, "f-moma-op-9-2", 0, 32, 9, 2, { 0, { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }  },
+  { OR1K_F_MOMA_OP_6_7, "f-moma-op-6-7", 0, 32, 6, 7, { 0, { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }  },
   { OR1K_F_MOMA_RESV_25_3, "f-moma-resv-25-3", 0, 32, 25, 3, { 0|A(RESERVED), { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }  },
   { OR1K_F_MOMA_RESV_25_2, "f-moma-resv-25-2", 0, 32, 25, 2, { 0|A(RESERVED), { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }  },
   { OR1K_F_MOMA_RESV_25_1, "f-moma-resv-25-1", 0, 32, 25, 1, { 0|A(RESERVED), { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }  },
@@ -1040,12 +1058,14 @@ const CGEN_IFLD or1k_cgen_ifld_table[] =
   { OR1K_F_MOMA_RESV_15_3, "f-moma-resv-15-3", 0, 32, 15, 3, { 0|A(RESERVED), { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }  },
   { OR1K_F_MOMA_RESV_15_2, "f-moma-resv-15-2", 0, 32, 15, 2, { 0|A(RESERVED), { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }  },
   { OR1K_F_MOMA_RESV_15_1, "f-moma-resv-15-1", 0, 32, 15, 1, { 0|A(RESERVED), { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }  },
-  { OR1K_F_MOMA_RESV_15_1, "f-moma-resv-15-5", 0, 32, 15, 5, { 0|A(RESERVED), { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }  },
+  { OR1K_F_MOMA_RESV_20_5, "f-moma-resv-20-5", 0, 32, 20, 5, { 0|A(RESERVED), { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }  },
+  { OR1K_F_MOMA_RESV_15_5, "f-moma-resv-15-5", 0, 32, 15, 5, { 0|A(RESERVED), { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }  },
   { OR1K_F_MOMA_RESV_10_3, "f-moma-resv-10-3", 0, 32, 10, 3, { 0|A(RESERVED), { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }  },
   { OR1K_F_MOMA_RESV_10_2, "f-moma-resv-10-2", 0, 32, 10, 2, { 0|A(RESERVED), { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }  },
   { OR1K_F_MOMA_RESV_10_1, "f-moma-resv-10-1", 0, 32, 10, 1, { 0|A(RESERVED), { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }  },
   { OR1K_F_MOMA_RESV_10_5, "f-moma-resv-10-5", 0, 32, 10, 5, { 0|A(RESERVED), { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }  },
   { OR1K_F_MOMA_RESV_8_3, "f-moma-resv-8-4", 0, 32, 8, 3, { 0|A(RESERVED), { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }  },
+  { OR1K_F_MOMA_RESV_7_1, "f-moma-resv-7-1", 0, 32, 7, 1, { 0|A(RESERVED), { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }  },
 /** MoMA end **/
   { OR1K_F_OP_25_2, "f-op-25-2", 0, 32, 25, 2, { 0, { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }  },
   { OR1K_F_OP_25_5, "f-op-25-5", 0, 32, 25, 5, { 0, { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }  },
@@ -1090,7 +1110,9 @@ const CGEN_IFLD or1k_cgen_ifld_table[] =
 
 const CGEN_MAYBE_MULTI_IFLD OR1K_F_UIMM16_SPLIT_MULTI_IFIELD [];
 const CGEN_MAYBE_MULTI_IFLD OR1K_F_SIMM16_SPLIT_MULTI_IFIELD [];
-
+/** MoMA begin **/
+const CGEN_MAYBE_MULTI_IFLD OR1K_F_MOMA_UIMM7_SPLIT_MULTI_IFIELD [];
+/** MoMA end **/
 
 /* multi ifield definitions */
 
@@ -1106,6 +1128,14 @@ const CGEN_MAYBE_MULTI_IFLD OR1K_F_SIMM16_SPLIT_MULTI_IFIELD [] =
     { 0, { (const PTR) &or1k_cgen_ifld_table[OR1K_F_IMM16_10_11] } },
     { 0, { (const PTR) 0 } }
 };
+/** MoMA begin **/
+const CGEN_MAYBE_MULTI_IFLD OR1K_F_MOMA_UIMM7_SPLIT_MULTI_IFIELD [] =
+{
+    { 0, { (const PTR) &or1k_cgen_ifld_table[OR1K_F_MOMA_UIMM7_15_6] } },
+    { 0, { (const PTR) &or1k_cgen_ifld_table[OR1K_F_MOMA_UIMM7_7_1] } },
+    { 0, { (const PTR) 0 } }
+};
+/** MoMA end **/
 
 /* The operand table.  */
 
@@ -1198,19 +1228,19 @@ const CGEN_OPERAND or1k_cgen_operand_table[] =
 /** MoMA begin **/
 
 /* zeD: moma destination register D */
-  { "zeD", OR1K_OPERAND_MOMA_RD_4096, HW_H_MOMAREG, 22, 2,
+  { "zeD", OR1K_OPERAND_MOMA_RD_4096, HW_H_MOMAREG, 24, 4,
     { 0, { (const PTR) &or1k_cgen_ifld_table[OR1K_F_MOMA_R1_4096] } }, 
     { 0, { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }  },
 /* zeA: moma source register A */
-  { "zeA", OR1K_OPERAND_MOMA_RA_4096, HW_H_MOMAREG, 17, 2,
+  { "zeA", OR1K_OPERAND_MOMA_RA_4096, HW_H_MOMAREG, 19, 4,
     { 0, { (const PTR) &or1k_cgen_ifld_table[OR1K_F_MOMA_R2_4096] } }, 
     { 0, { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }  },
 /* zeB: moma source register B */
-  { "zeB", OR1K_OPERAND_MOMA_RB_4096, HW_H_MOMAREG, 12, 2,
+  { "zeB", OR1K_OPERAND_MOMA_RB_4096, HW_H_MOMAREG, 14, 4,
     { 0, { (const PTR) &or1k_cgen_ifld_table[OR1K_F_MOMA_R3_4096] } }, 
     { 0, { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }  },
 /* zeC: moma source register C */
-  { "zeC", OR1K_OPERAND_MOMA_RC_4096, HW_H_MOMAREG, 7, 2,
+  { "zeC", OR1K_OPERAND_MOMA_RC_4096, HW_H_MOMAREG, 9, 4,
     { 0, { (const PTR) &or1k_cgen_ifld_table[OR1K_F_MOMA_R4_4096] } }, 
     { 0, { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }  },
 
@@ -1265,9 +1295,14 @@ const CGEN_OPERAND or1k_cgen_operand_table[] =
     { 0, { (const PTR) &or1k_cgen_ifld_table[OR1K_F_MOMA_R4_512] } }, 
     { 0, { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }  },
 
+/* uimm7: 7-bit unsigned immediate divided into 6-bit and 1-bit */
+  { "uimm7-split", OR1K_OPERAND_MOMA_UIMM7_SPLIT, HW_H_MOMAUIMM, 15, 7,
+    { 2, { (const PTR) &OR1K_F_MOMA_UIMM7_SPLIT_MULTI_IFIELD[0] } }, 
+    { 0|A(VIRTUAL), { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }  },
+
 /* uimm7: 7-bit unsigned immediate */
   { "uimm7", OR1K_OPERAND_MOMA_UIMM7, HW_H_MOMAUIMM, 15, 7,
-    { 0, { (const PTR) &or1k_cgen_ifld_table[OR1K_F_MOMA_UIMM6] } }, 
+    { 0, { (const PTR) &or1k_cgen_ifld_table[OR1K_F_MOMA_UIMM7] } }, 
     { 0, { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }  },
 /* uimm6: 6-bit unsigned immediate */
   { "uimm6", OR1K_OPERAND_MOMA_UIMM6, HW_H_MOMAUIMM, 14, 6,
@@ -1780,7 +1815,28 @@ static const CGEN_IBASE or1k_cgen_insn_table[MAX_INSNS] =
     { 0, { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }
   },
 
-/* le3.modmul $mD,$mA,$mB,$mC */
+// Other
+  {
+    OR1K_INSN_LE_ADD, "le-mfer", "le.mfer", 32,
+    { 0, { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }
+  },
+  {
+    OR1K_INSN_LE_AND, "le-mter", "le.mter", 32,
+    { 0, { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }
+  },
+
+// Acceleration
+
+  {
+    OR1K_INSN_LE_ADD, "le-add", "le.add", 32,
+    { 0, { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }
+  },
+  {
+    OR1K_INSN_LE_AND, "le-and", "le.and", 32,
+    { 0, { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }
+  },
+
+/* le3.modmul $mD,$mA,$mB,$mC *
   {
     OR1K_INSN_LE3_MODMUL4096, "le3-modmul", "le3.modmul", 32,
     { 0, { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }
@@ -1798,7 +1854,7 @@ static const CGEN_IBASE or1k_cgen_insn_table[MAX_INSNS] =
     { 0, { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }
   },
 
-/* le3.modexp $mD,$mA,$mB,$mC */
+/* le3.modexp $mD,$mA,$mB,$mC *
   {
     OR1K_INSN_LE3_MODEXP4096, "le3-modexp", "le3.modexp", 32,
     { 0, { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }
@@ -1816,7 +1872,7 @@ static const CGEN_IBASE or1k_cgen_insn_table[MAX_INSNS] =
     { 0, { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }
   },
 
-/* le3.gfun $mD,$mA,$mB,$mC */
+/* le3.gfun $mD,$mA,$mB,$mC *
   {
     OR1K_INSN_LE3_GFUN4096, "le3-gfun", "le3.gfun", 32,
     { 0, { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }
@@ -1834,7 +1890,7 @@ static const CGEN_IBASE or1k_cgen_insn_table[MAX_INSNS] =
     { 0, { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }
   },
 
-/* le3.gcd $mD,$mA,$mB */
+/* le3.gcd $mD,$mA,$mB *
   {
     OR1K_INSN_LE3_GCD4096, "le3-gcd", "le3.gcd", 32,
     { 0, { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }
@@ -1852,7 +1908,7 @@ static const CGEN_IBASE or1k_cgen_insn_table[MAX_INSNS] =
     { 0, { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }
   },
 
-/* le3.inv $mD,$mA,$mB */
+/* le3.inv $mD,$mA,$mB *
   {
     OR1K_INSN_LE3_INV4096, "le3-inv", "le3.inv", 32,
     { 0, { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }
@@ -1870,7 +1926,7 @@ static const CGEN_IBASE or1k_cgen_insn_table[MAX_INSNS] =
     { 0, { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }
   },
 
-/* le3.mter $mD(uimm6),$rA */
+/* le3.mter $mD(uimm6),$rA *
   {
     OR1K_INSN_LE3_MTER4096, "le3-mter", "le3.mter", 32,
     { 0, { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }
@@ -1888,7 +1944,7 @@ static const CGEN_IBASE or1k_cgen_insn_table[MAX_INSNS] =
     { 0, { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }
   },
 
-/* le3.mfer $rD,$mA(uimm6) */
+/* le3.mfer $rD,$mA(uimm6) *
   {
     OR1K_INSN_LE3_MFER4096, "le3-mfer", "le3.mfer", 32,
     { 0, { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }
@@ -1907,7 +1963,7 @@ static const CGEN_IBASE or1k_cgen_insn_table[MAX_INSNS] =
   },
 
 
-/* le3.rand $mD,$mA */
+/* le3.rand $mD,$mA *
   {
     OR1K_INSN_LE3_RAND4096, "le3-rand", "le3.rand", 32,
     { 0, { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }

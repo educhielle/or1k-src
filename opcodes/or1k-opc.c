@@ -168,6 +168,27 @@ static const CGEN_IFMT ifmt_lf_cust1_d ATTRIBUTE_UNUSED = {
 };
 
 /** MoMA begin **/
+static const CGEN_IFMT ifmt_moma_mdmamb4096 ATTRIBUTE_UNUSED = {
+  32, 32, 0xffffffff, { { F (F_OPCODE) }, { F (F_MOMA_RESV_25_1) }, { F (F_MOMA_R1_4096) }, { F (F_MOMA_RESV_20_1) }, { F (F_MOMA_R2_4096) }, { F (F_MOMA_RESV_15_1) }, { F (F_MOMA_R3_4096) }, { F (F_MOMA_RESV_10_1) }, { F (F_MOMA_OP_9_2) }, { F (F_MOMA_RESV_7_1) }, { F (F_MOMA_OP_6_7) }, { 0 } }
+};
+
+static const CGEN_IFMT ifmt_moma_mdma4096 ATTRIBUTE_UNUSED = {
+  32, 32, 0xffffffff, { { F (F_OPCODE) }, { F (F_MOMA_RESV_25_1) }, { F (F_MOMA_R1_4096) }, { F (F_MOMA_RESV_20_1) }, { F (F_MOMA_R2_4096) }, { F (F_MOMA_RESV_15_5) }, { F (F_MOMA_RESV_10_1) }, { F (F_MOMA_OP_9_2) }, { F (F_MOMA_RESV_7_1) }, { F (F_MOMA_OP_6_7) }, { 0 } }
+};
+
+static const CGEN_IFMT ifmt_moma_md4096 ATTRIBUTE_UNUSED = {
+  32, 32, 0xffffffff, { { F (F_OPCODE) }, { F (F_MOMA_RESV_25_1) }, { F (F_MOMA_R1_4096) }, { F (F_MOMA_RESV_20_5) }, { F (F_MOMA_RESV_15_5) }, { F (F_MOMA_RESV_10_1) }, { F (F_MOMA_OP_9_2) }, { F (F_MOMA_RESV_7_1) }, { F (F_MOMA_OP_6_7) }, { 0 } }
+};
+
+static const CGEN_IFMT ifmt_moma_rdmauimm4096 ATTRIBUTE_UNUSED = {
+  32, 32, 0xffffffff, { { F (F_OPCODE) }, { F (F_R1) }, { F (F_MOMA_RESV_20_1) }, { F (F_MOMA_R2_4096) }, { F (F_MOMA_UIMM7_SPLIT) }, { F (F_MOMA_OP_9_2) }, { F (F_MOMA_OP_6_7) }, { 0 } }
+};
+
+static const CGEN_IFMT ifmt_moma_mdrauimm4096 ATTRIBUTE_UNUSED = {
+  32, 32, 0xffffffff, { { F (F_OPCODE) }, { F (F_MOMA_RESV_25_1) }, { F (F_MOMA_R1_4096) }, { F (F_R2) }, { F (F_MOMA_UIMM7_SPLIT) }, { F (F_MOMA_OP_9_2) }, { F (F_MOMA_OP_6_7) }, { 0 } }
+};
+
+/*
 static const CGEN_IFMT ifmt_moma_mdmambmc4096 ATTRIBUTE_UNUSED = {
   32, 32, 0xffffffff, { { F (F_OPCODE) }, { F (F_MOMA_RESV_25_3) }, { F (F_MOMA_R1_4096) }, { F (F_MOMA_RESV_20_3) }, { F (F_MOMA_R2_4096) }, { F (F_MOMA_RESV_15_3) }, { F (F_MOMA_R3_4096) }, { F (F_MOMA_RESV_10_3) }, { F (F_MOMA_R4_4096) }, { F (F_MOMA_OP_5_6) }, { 0 } }
 };
@@ -251,7 +272,7 @@ static const CGEN_IFMT ifmt_moma_rdmauimm1024 ATTRIBUTE_UNUSED = {
 static const CGEN_IFMT ifmt_moma_rdmauimm512 ATTRIBUTE_UNUSED = {
   32, 32, 0xffffffff, { { F (F_OPCODE) }, { F (F_R1) }, { F (F_MOMA_RESV_20_3) }, { F (F_MOMA_R2_512) }, { F (F_MOMA_RESV_15_3) }, { F (F_MOMA_UIMM4) }, { F (F_MOMA_RESV_8_3) }, { F (F_MOMA_OP_5_6) }, { 0 } }
 };
-
+*/
 /** MoMA end **/
 
 #undef F
@@ -787,7 +808,39 @@ static const CGEN_OPCODE or1k_cgen_insn_opcode_table[MAX_INSNS] =
     & ifmt_l_rfe, { 0x70000000 }
   },
 
-/* le3.modmul $mD,$mA,$mB,$mC */
+// Other
+
+// le.mfer rD,mA(uimm7)
+  {
+    { 0, 0, 0, 0 },
+    { { MNEM, ' ', OP (RD), ',', OP (MOMA_RA_4096), '(', OP (MOMA_UIMM7_SPLIT), ')', 0 } },
+    & ifmt_moma_rdmauimm4096, { 0xF8000203 }
+  },
+
+// le.mter mD(uimm7),rA
+  {
+    { 0, 0, 0, 0 },
+    { { MNEM, ' ', OP (MOMA_RD_4096), '(', OP (MOMA_UIMM7_SPLIT), ')', ',', OP (RA), 0 } },
+    & ifmt_moma_mdrauimm4096, { 0xF800020B }
+  },
+
+// Acceleration
+
+// le.add ed,ea,eb
+  {
+    { 0, 0, 0, 0 },
+    { { MNEM, ' ', OP (MOMA_RD_4096), ',', OP (MOMA_RA_4096), ',', OP (MOMA_RB_4096), 0 } },
+    & ifmt_moma_mdmamb4096, { 0xF8000000 }
+  },
+
+// le.and ed,ea,eb
+  {
+    { 0, 0, 0, 0 },
+    { { MNEM, ' ', OP (MOMA_RD_4096), ',', OP (MOMA_RA_4096), ',', OP (MOMA_RB_4096), 0 } },
+    & ifmt_moma_mdmamb4096, { 0xF8000003 }
+  },
+
+/* le3.modmul $mD,$mA,$mB,$mC *
   {
     { 0, 0, 0, 0 },
     { { MNEM, ' ', OP (MOMA_RD_4096), ',', OP (MOMA_RA_4096), ',', OP (MOMA_RB_4096), ',', OP (MOMA_RC_4096), 0 } },
@@ -809,7 +862,7 @@ static const CGEN_OPCODE or1k_cgen_insn_opcode_table[MAX_INSNS] =
     & ifmt_moma_mdmambmc512, { 0x74000000 }
   },
 
-/* le3.modexp $mD,$mA,$mB,$mC */
+/* le3.modexp $mD,$mA,$mB,$mC *
   {
     { 0, 0, 0, 0 },
     { { MNEM, ' ', OP (MOMA_RD_4096), ',', OP (MOMA_RA_4096), ',', OP (MOMA_RB_4096), ',', OP (MOMA_RC_4096), 0 } },
@@ -831,7 +884,7 @@ static const CGEN_OPCODE or1k_cgen_insn_opcode_table[MAX_INSNS] =
     & ifmt_moma_mdmambmc512, { 0x74000001 }
   },
 
-/* le3.gfun $mD,$mA,$mB,$mC */
+/* le3.gfun $mD,$mA,$mB,$mC *
   {
     { 0, 0, 0, 0 },
     { { MNEM, ' ', OP (MOMA_RD_4096), ',', OP (MOMA_RA_4096), ',', OP (MOMA_RB_4096), ',', OP (MOMA_RC_4096), 0 } },
@@ -853,7 +906,7 @@ static const CGEN_OPCODE or1k_cgen_insn_opcode_table[MAX_INSNS] =
     & ifmt_moma_mdmambmc512, { 0x7400000f }
   },
 
-/* le3.gcd $mD,$mA,$mB */
+/* le3.gcd $mD,$mA,$mB *
   {
     { 0, 0, 0, 0 },
     { { MNEM, ' ', OP (MOMA_RD_4096), ',', OP (MOMA_RA_4096), ',', OP (MOMA_RB_4096), 0 } },
@@ -875,7 +928,7 @@ static const CGEN_OPCODE or1k_cgen_insn_opcode_table[MAX_INSNS] =
     & ifmt_moma_mdmamb512, { 0x74000004 }
   },
 
-/* le3.inv $mD,$mA,$mB */
+/* le3.inv $mD,$mA,$mB *
   {
     { 0, 0, 0, 0 },
     { { MNEM, ' ', OP (MOMA_RD_4096), ',', OP (MOMA_RA_4096), ',', OP (MOMA_RB_4096), 0 } },
@@ -897,7 +950,7 @@ static const CGEN_OPCODE or1k_cgen_insn_opcode_table[MAX_INSNS] =
     & ifmt_moma_mdmamb512, { 0x74000005 }
   },
 
-/* le3.mter $mD($uimm16),$rA */
+/* le3.mter $mD($uimm16),$rA *
   {
     { 0, 0, 0, 0 },
     { { MNEM, ' ', OP (MOMA_RD_4096), '(', OP (MOMA_UIMM7), ')', ',', OP (RA), 0 } },
@@ -919,7 +972,7 @@ static const CGEN_OPCODE or1k_cgen_insn_opcode_table[MAX_INSNS] =
     & ifmt_moma_mdrauimm512, { 0x74000008 }
   },
 
-/* le3.mfer $rD,$mA($uimm16) */
+/* le3.mfer $rD,$mA($uimm16) *
   {
     { 0, 0, 0, 0 },
     { { MNEM, ' ', OP (RD), ',', OP (MOMA_RA_4096), '(', OP (MOMA_UIMM7), ')', 0 } },
@@ -941,7 +994,7 @@ static const CGEN_OPCODE or1k_cgen_insn_opcode_table[MAX_INSNS] =
     & ifmt_moma_rdmauimm512, { 0x74000009 }
   },
 
-/* le3.rand $mD,$mA */
+/* le3.rand $mD,$mA *
   {
     { 0, 0, 0, 0 },
     { { MNEM, ' ', OP (MOMA_RD_4096), ',', OP (MOMA_RA_4096), 0 } },

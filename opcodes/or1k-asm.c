@@ -529,6 +529,9 @@ or1k_cgen_parse_operand (CGEN_CPU_DESC cd,
       errmsg = cgen_parse_keyword (cd, strp, & or1k_cgen_opval_h_momareg512, & fields->f_r4);
       break;
 
+    case OR1K_OPERAND_MOMA_UIMM7_SPLIT :
+      errmsg = cgen_parse_unsigned_integer (cd, strp, OR1K_OPERAND_MOMA_UIMM7_SPLIT, (unsigned long *) (& fields->f_uimm7_split));
+      break;
     case OR1K_OPERAND_MOMA_UIMM7 :
       errmsg = cgen_parse_unsigned_integer (cd, strp, OR1K_OPERAND_MOMA_UIMM7, (unsigned long *) (& fields->f_uimm7));
       break;
