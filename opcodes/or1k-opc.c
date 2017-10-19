@@ -840,180 +840,158 @@ static const CGEN_OPCODE or1k_cgen_insn_opcode_table[MAX_INSNS] =
     & ifmt_moma_mdmamb4096, { 0xF8000003 }
   },
 
-/* le3.modmul $mD,$mA,$mB,$mC *
-  {
-    { 0, 0, 0, 0 },
-    { { MNEM, ' ', OP (MOMA_RD_4096), ',', OP (MOMA_RA_4096), ',', OP (MOMA_RB_4096), ',', OP (MOMA_RC_4096), 0 } },
-    & ifmt_moma_mdmambmc4096, { 0x74000030 }
-  },
-  {
-    { 0, 0, 0, 0 },
-    { { MNEM, ' ', OP (MOMA_RD_2048), ',', OP (MOMA_RA_2048), ',', OP (MOMA_RB_2048), ',', OP (MOMA_RC_2048), 0 } },
-    & ifmt_moma_mdmambmc2048, { 0x74000020 }
-  },
-  {
-    { 0, 0, 0, 0 },
-    { { MNEM, ' ', OP (MOMA_RD_1024), ',', OP (MOMA_RA_1024), ',', OP (MOMA_RB_1024), ',', OP (MOMA_RC_1024), 0 } },
-    & ifmt_moma_mdmambmc1024, { 0x74000010 }
-  },
-  {
-    { 0, 0, 0, 0 },
-    { { MNEM, ' ', OP (MOMA_RD_512), ',', OP (MOMA_RA_512), ',', OP (MOMA_RB_512), ',', OP (MOMA_RC_512), 0 } },
-    & ifmt_moma_mdmambmc512, { 0x74000000 }
-  },
-
-/* le3.modexp $mD,$mA,$mB,$mC *
-  {
-    { 0, 0, 0, 0 },
-    { { MNEM, ' ', OP (MOMA_RD_4096), ',', OP (MOMA_RA_4096), ',', OP (MOMA_RB_4096), ',', OP (MOMA_RC_4096), 0 } },
-    & ifmt_moma_mdmambmc4096, { 0x74000031 }
-  },
-  {
-    { 0, 0, 0, 0 },
-    { { MNEM, ' ', OP (MOMA_RD_2048), ',', OP (MOMA_RA_2048), ',', OP (MOMA_RB_2048), ',', OP (MOMA_RC_2048), 0 } },
-    & ifmt_moma_mdmambmc2048, { 0x74000021 }
-  },
-  {
-    { 0, 0, 0, 0 },
-    { { MNEM, ' ', OP (MOMA_RD_1024), ',', OP (MOMA_RA_1024), ',', OP (MOMA_RB_1024), ',', OP (MOMA_RC_1024), 0 } },
-    & ifmt_moma_mdmambmc1024, { 0x74000011 }
-  },
-  {
-    { 0, 0, 0, 0 },
-    { { MNEM, ' ', OP (MOMA_RD_512), ',', OP (MOMA_RA_512), ',', OP (MOMA_RB_512), ',', OP (MOMA_RC_512), 0 } },
-    & ifmt_moma_mdmambmc512, { 0x74000001 }
-  },
-
-/* le3.gfun $mD,$mA,$mB,$mC *
-  {
-    { 0, 0, 0, 0 },
-    { { MNEM, ' ', OP (MOMA_RD_4096), ',', OP (MOMA_RA_4096), ',', OP (MOMA_RB_4096), ',', OP (MOMA_RC_4096), 0 } },
-    & ifmt_moma_mdmambmc4096, { 0x7400003f }
-  },
-  {
-    { 0, 0, 0, 0 },
-    { { MNEM, ' ', OP (MOMA_RD_2048), ',', OP (MOMA_RA_2048), ',', OP (MOMA_RB_2048), ',', OP (MOMA_RC_2048), 0 } },
-    & ifmt_moma_mdmambmc2048, { 0x7400002f }
-  },
-  {
-    { 0, 0, 0, 0 },
-    { { MNEM, ' ', OP (MOMA_RD_1024), ',', OP (MOMA_RA_1024), ',', OP (MOMA_RB_1024), ',', OP (MOMA_RC_1024), 0 } },
-    & ifmt_moma_mdmambmc1024, { 0x7400001f }
-  },
-  {
-    { 0, 0, 0, 0 },
-    { { MNEM, ' ', OP (MOMA_RD_512), ',', OP (MOMA_RA_512), ',', OP (MOMA_RB_512), ',', OP (MOMA_RC_512), 0 } },
-    & ifmt_moma_mdmambmc512, { 0x7400000f }
-  },
-
-/* le3.gcd $mD,$mA,$mB *
-  {
-    { 0, 0, 0, 0 },
-    { { MNEM, ' ', OP (MOMA_RD_4096), ',', OP (MOMA_RA_4096), ',', OP (MOMA_RB_4096), 0 } },
-    & ifmt_moma_mdmamb4096, { 0x74000034 }
-  },
-  {
-    { 0, 0, 0, 0 },
-    { { MNEM, ' ', OP (MOMA_RD_2048), ',', OP (MOMA_RA_2048), ',', OP (MOMA_RB_2048), 0 } },
-    & ifmt_moma_mdmamb2048, { 0x74000024 }
-  },
-  {
-    { 0, 0, 0, 0 },
-    { { MNEM, ' ', OP (MOMA_RD_1024), ',', OP (MOMA_RA_1024), ',', OP (MOMA_RB_1024), 0 } },
-    & ifmt_moma_mdmamb1024, { 0x74000014 }
-  },
-  {
-    { 0, 0, 0, 0 },
-    { { MNEM, ' ', OP (MOMA_RD_512), ',', OP (MOMA_RA_512), ',', OP (MOMA_RB_512), 0 } },
-    & ifmt_moma_mdmamb512, { 0x74000004 }
-  },
-
-/* le3.inv $mD,$mA,$mB *
-  {
-    { 0, 0, 0, 0 },
-    { { MNEM, ' ', OP (MOMA_RD_4096), ',', OP (MOMA_RA_4096), ',', OP (MOMA_RB_4096), 0 } },
-    & ifmt_moma_mdmamb4096, { 0x74000035 }
-  },
-  {
-    { 0, 0, 0, 0 },
-    { { MNEM, ' ', OP (MOMA_RD_2048), ',', OP (MOMA_RA_2048), ',', OP (MOMA_RB_2048), 0 } },
-    & ifmt_moma_mdmamb2048, { 0x74000025 }
-  },
-  {
-    { 0, 0, 0, 0 },
-    { { MNEM, ' ', OP (MOMA_RD_1024), ',', OP (MOMA_RA_1024), ',', OP (MOMA_RB_1024), 0 } },
-    & ifmt_moma_mdmamb1024, { 0x74000015 }
-  },
-  {
-    { 0, 0, 0, 0 },
-    { { MNEM, ' ', OP (MOMA_RD_512), ',', OP (MOMA_RA_512), ',', OP (MOMA_RB_512), 0 } },
-    & ifmt_moma_mdmamb512, { 0x74000005 }
-  },
-
-/* le3.mter $mD($uimm16),$rA *
-  {
-    { 0, 0, 0, 0 },
-    { { MNEM, ' ', OP (MOMA_RD_4096), '(', OP (MOMA_UIMM7), ')', ',', OP (RA), 0 } },
-    & ifmt_moma_mdrauimm4096, { 0x74000038 }
-  },
-  {
-    { 0, 0, 0, 0 },
-    { { MNEM, ' ', OP (MOMA_RD_2048), '(', OP (MOMA_UIMM6), ')', ',', OP (RA), 0 } },
-    & ifmt_moma_mdrauimm2048, { 0x74000028 }
-  },
-  {
-    { 0, 0, 0, 0 },
-    { { MNEM, ' ', OP (MOMA_RD_1024), '(', OP (MOMA_UIMM5), ')', ',', OP (RA), 0 } },
-    & ifmt_moma_mdrauimm1024, { 0x74000018 }
-  },
-  {
-    { 0, 0, 0, 0 },
-    { { MNEM, ' ', OP (MOMA_RD_512), '(', OP (MOMA_UIMM4), ')', ',', OP (RA), 0 } },
-    & ifmt_moma_mdrauimm512, { 0x74000008 }
-  },
-
-/* le3.mfer $rD,$mA($uimm16) *
-  {
-    { 0, 0, 0, 0 },
-    { { MNEM, ' ', OP (RD), ',', OP (MOMA_RA_4096), '(', OP (MOMA_UIMM7), ')', 0 } },
-    & ifmt_moma_rdmauimm4096, { 0x74000039 }
-  },
-  {
-    { 0, 0, 0, 0 },
-    { { MNEM, ' ', OP (RD), ',', OP (MOMA_RA_2048), '(', OP (MOMA_UIMM6), ')', 0 } },
-    & ifmt_moma_rdmauimm2048, { 0x74000029 }
-  },
-  {
-    { 0, 0, 0, 0 },
-    { { MNEM, ' ', OP (RD), ',', OP (MOMA_RA_1024), '(', OP (MOMA_UIMM5), ')', 0 } },
-    & ifmt_moma_rdmauimm1024, { 0x74000019 }
-  },
-  {
-    { 0, 0, 0, 0 },
-    { { MNEM, ' ', OP (RD), ',', OP (MOMA_RA_512), '(', OP (MOMA_UIMM4), ')', 0 } },
-    & ifmt_moma_rdmauimm512, { 0x74000009 }
-  },
-
-/* le3.rand $mD,$mA *
+// le.not ed,ea
   {
     { 0, 0, 0, 0 },
     { { MNEM, ' ', OP (MOMA_RD_4096), ',', OP (MOMA_RA_4096), 0 } },
-    & ifmt_moma_mdma4096, { 0x7400003B }
+    & ifmt_moma_mdma4096, { 0xF8000006 }
   },
+
+// le.or ed,ea,eb
   {
     { 0, 0, 0, 0 },
-    { { MNEM, ' ', OP (MOMA_RD_2048), ',', OP (MOMA_RA_2048), 0 } },
-    & ifmt_moma_mdma2048, { 0x7400002B }
+    { { MNEM, ' ', OP (MOMA_RD_4096), ',', OP (MOMA_RA_4096), ',', OP (MOMA_RB_4096), 0 } },
+    & ifmt_moma_mdmamb4096, { 0xF8000004 }
   },
+
+// le.cmov ed,ea,eb
   {
     { 0, 0, 0, 0 },
-    { { MNEM, ' ', OP (MOMA_RD_1024), ',', OP (MOMA_RA_1024), 0 } },
-    & ifmt_moma_mdma1024, { 0x7400001B }
+    { { MNEM, ' ', OP (MOMA_RD_4096), ',', OP (MOMA_RA_4096), ',', OP (MOMA_RB_4096), 0 } },
+    & ifmt_moma_mdmamb4096, { 0xF800000E }
   },
+
+// le.dec ed
   {
     { 0, 0, 0, 0 },
-    { { MNEM, ' ', OP (MOMA_RD_512), ',', OP (MOMA_RA_512), 0 } },
-    & ifmt_moma_mdma512, { 0x7400000B }
+    { { MNEM, ' ', OP (MOMA_RD_4096), 0 } },
+    & ifmt_moma_md4096, { 0xF800000D }
+  },
+
+// le.divs ed,ea,eb
+  {
+    { 0, 0, 0, 0 },
+    { { MNEM, ' ', OP (MOMA_RD_4096), ',', OP (MOMA_RA_4096), ',', OP (MOMA_RB_4096), 0 } },
+    & ifmt_moma_mdmamb4096, { 0xF8000309 }
+  },
+
+// le.divu ed,ea,eb
+  {
+    { 0, 0, 0, 0 },
+    { { MNEM, ' ', OP (MOMA_RD_4096), ',', OP (MOMA_RA_4096), ',', OP (MOMA_RB_4096), 0 } },
+    & ifmt_moma_mdmamb4096, { 0xF800030A }
+  },
+
+// le.eq ed,ea,eb
+  {
+    { 0, 0, 0, 0 },
+    { { MNEM, ' ', OP (MOMA_RD_4096), ',', OP (MOMA_RA_4096), ',', OP (MOMA_RB_4096), 0 } },
+    & ifmt_moma_mdmamb4096, { 0xF800010E }
+  },
+
+// le.xor ed,ea,eb
+  {
+    { 0, 0, 0, 0 },
+    { { MNEM, ' ', OP (MOMA_RD_4096), ',', OP (MOMA_RA_4096), ',', OP (MOMA_RB_4096), 0 } },
+    & ifmt_moma_mdmamb4096, { 0xF8000005 }
+  },
+
+// le.pows ed,ea,eb
+  {
+    { 0, 0, 0, 0 },
+    { { MNEM, ' ', OP (MOMA_RD_4096), ',', OP (MOMA_RA_4096), ',', OP (MOMA_RB_4096), 0 } },
+    & ifmt_moma_mdmamb4096, { 0xF800030C }
+  },
+
+// le.powu ed,ea,eb
+  {
+    { 0, 0, 0, 0 },
+    { { MNEM, ' ', OP (MOMA_RD_4096), ',', OP (MOMA_RA_4096), ',', OP (MOMA_RB_4096), 0 } },
+    & ifmt_moma_mdmamb4096, { 0xF800030D }
+  },
+
+// le.ff1 ed,ea
+  {
+    { 0, 0, 0, 0 },
+    { { MNEM, ' ', OP (MOMA_RD_4096), ',', OP (MOMA_RA_4096), 0 } },
+    & ifmt_moma_mdma4096, { 0xF800000F }
+  },
+
+// le.fl1 ed,ea
+  {
+    { 0, 0, 0, 0 },
+    { { MNEM, ' ', OP (MOMA_RD_4096), ',', OP (MOMA_RA_4096), 0 } },
+    & ifmt_moma_mdma4096, { 0xF800010F }
+  },
+
+// le.gcd ed,ea,eb
+  {
+    { 0, 0, 0, 0 },
+    { { MNEM, ' ', OP (MOMA_RD_4096), ',', OP (MOMA_RA_4096), ',', OP (MOMA_RB_4096), 0 } },
+    & ifmt_moma_mdmamb4096, { 0xF800020A }
+  },
+
+// le.ges ed,ea,eb
+  {
+    { 0, 0, 0, 0 },
+    { { MNEM, ' ', OP (MOMA_RD_4096), ',', OP (MOMA_RA_4096), ',', OP (MOMA_RB_4096), 0 } },
+    & ifmt_moma_mdmamb4096, { 0xF800010B }
+  },
+
+// le.geu ed,ea,eb
+  {
+    { 0, 0, 0, 0 },
+    { { MNEM, ' ', OP (MOMA_RD_4096), ',', OP (MOMA_RA_4096), ',', OP (MOMA_RB_4096), 0 } },
+    & ifmt_moma_mdmamb4096, { 0xF800000B }
+  },
+
+// le.gts ed,ea,eb
+  {
+    { 0, 0, 0, 0 },
+    { { MNEM, ' ', OP (MOMA_RD_4096), ',', OP (MOMA_RA_4096), ',', OP (MOMA_RB_4096), 0 } },
+    & ifmt_moma_mdmamb4096, { 0xF800010C }
+  },
+
+// le.gtu ed,ea,eb
+  {
+    { 0, 0, 0, 0 },
+    { { MNEM, ' ', OP (MOMA_RD_4096), ',', OP (MOMA_RA_4096), ',', OP (MOMA_RB_4096), 0 } },
+    & ifmt_moma_mdmamb4096, { 0xF800000C }
+  },
+
+// le.inc ed
+  {
+    { 0, 0, 0, 0 },
+    { { MNEM, ' ', OP (MOMA_RD_4096), 0 } },
+    & ifmt_moma_md4096, { 0xF8000001 }
+  },
+
+// le.les ed,ea,eb
+  {
+    { 0, 0, 0, 0 },
+    { { MNEM, ' ', OP (MOMA_RD_4096), ',', OP (MOMA_RA_4096), ',', OP (MOMA_RB_4096), 0 } },
+    & ifmt_moma_mdmamb4096, { 0xF8000109 }
+  },
+
+// le.leu ed,ea,eb
+  {
+    { 0, 0, 0, 0 },
+    { { MNEM, ' ', OP (MOMA_RD_4096), ',', OP (MOMA_RA_4096), ',', OP (MOMA_RB_4096), 0 } },
+    & ifmt_moma_mdmamb4096, { 0xF8000009 }
+  },
+
+// le.lts ed,ea,eb
+  {
+    { 0, 0, 0, 0 },
+    { { MNEM, ' ', OP (MOMA_RD_4096), ',', OP (MOMA_RA_4096), ',', OP (MOMA_RB_4096), 0 } },
+    & ifmt_moma_mdmamb4096, { 0xF8000107 }
+  },
+
+// le.ltu ed,ea,eb
+  {
+    { 0, 0, 0, 0 },
+    { { MNEM, ' ', OP (MOMA_RD_4096), ',', OP (MOMA_RA_4096), ',', OP (MOMA_RB_4096), 0 } },
+    & ifmt_moma_mdmamb4096, { 0xF8000007 }
   },
 
 /** backup begin **/
