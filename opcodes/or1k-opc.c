@@ -180,6 +180,10 @@ static const CGEN_IFMT ifmt_moma_md4096 ATTRIBUTE_UNUSED = {
   32, 32, 0xffffffff, { { F (F_OPCODE) }, { F (F_MOMA_RESV_25_1) }, { F (F_MOMA_R1_4096) }, { F (F_MOMA_RESV_20_5) }, { F (F_MOMA_RESV_15_5) }, { F (F_MOMA_RESV_10_1) }, { F (F_MOMA_OP_9_2) }, { F (F_MOMA_RESV_7_1) }, { F (F_MOMA_OP_6_7) }, { 0 } }
 };
 
+static const CGEN_IFMT ifmt_moma_4096 ATTRIBUTE_UNUSED = {
+  32, 32, 0xffffffff, { { F (F_OPCODE) }, { F (F_MOMA_RESV_25_5) }, { F (F_MOMA_RESV_20_5) }, { F (F_MOMA_RESV_15_5) }, { F (F_MOMA_RESV_10_1) }, { F (F_MOMA_OP_9_2) }, { F (F_MOMA_RESV_7_1) }, { F (F_MOMA_OP_6_7) }, { 0 } }
+};
+
 static const CGEN_IFMT ifmt_moma_rdmauimm4096 ATTRIBUTE_UNUSED = {
   32, 32, 0xffffffff, { { F (F_OPCODE) }, { F (F_R1) }, { F (F_MOMA_RESV_20_1) }, { F (F_MOMA_R2_4096) }, { F (F_MOMA_UIMM7_SPLIT) }, { F (F_MOMA_OP_9_2) }, { F (F_MOMA_OP_6_7) }, { 0 } }
 };
@@ -810,6 +814,55 @@ static const CGEN_OPCODE or1k_cgen_insn_opcode_table[MAX_INSNS] =
 
 // Other
 
+// le.enc ed,ea
+  {
+    { 0, 0, 0, 0 },
+    { { MNEM, ' ', OP (MOMA_RD_4096), ',', OP (MOMA_RA_4096), 0 } },
+    & ifmt_moma_mdma4096, { 0xF800022e }
+  },
+
+// le.mafdtspr ed,ea
+  {
+    { 0, 0, 0, 0 },
+    { { MNEM, ' ', OP (MOMA_RD_4096), ',', OP (MOMA_RA_4096), 0 } },
+    & ifmt_moma_mdma4096, { 0xF800022c }
+  },
+
+// le.mabdtspr ed,ea
+  {
+    { 0, 0, 0, 0 },
+    { { MNEM, ' ', OP (MOMA_RD_4096), ',', OP (MOMA_RA_4096), 0 } },
+    & ifmt_moma_mdma4096, { 0xF800022b }
+  },
+
+// le.mabfdtspr ed,ea
+  {
+    { 0, 0, 0, 0 },
+    { { MNEM, ' ', OP (MOMA_RD_4096), ',', OP (MOMA_RA_4096), 0 } },
+    & ifmt_moma_mdma4096, { 0xF800022d }
+  },
+
+// le.maefspr ed,ea
+  {
+    { 0, 0, 0, 0 },
+    { { MNEM, ' ', OP (MOMA_RD_4096), ',', OP (MOMA_RA_4096), 0 } },
+    & ifmt_moma_mdma4096, { 0xF8000225 }
+  },
+
+// le.mfftsk
+  {
+    { 0, 0, 0, 0 },
+    { { MNEM, 0 } },
+    & ifmt_moma_4096, { 0xF8000224 }
+  },
+
+// le.mfbtsk
+  {
+    { 0, 0, 0, 0 },
+    { { MNEM, 0 } },
+    & ifmt_moma_4096, { 0xF8000223 }
+  },
+
 // le.mfer rD,mA(uimm7)
   {
     { 0, 0, 0, 0 },
@@ -822,6 +875,41 @@ static const CGEN_OPCODE or1k_cgen_insn_opcode_table[MAX_INSNS] =
     { 0, 0, 0, 0 },
     { { MNEM, ' ', OP (MOMA_RD_4096), '(', OP (MOMA_UIMM7_SPLIT), ')', ',', OP (RA), 0 } },
     & ifmt_moma_mdrauimm4096, { 0xF800020B }
+  },
+
+// le.mfspr ed,ea
+  {
+    { 0, 0, 0, 0 },
+    { { MNEM, ' ', OP (MOMA_RD_4096), ',', OP (MOMA_RA_4096), 0 } },
+    & ifmt_moma_mdma4096, { 0xF8000204 }
+  },
+
+// le.mtspr ed,ea
+  {
+    { 0, 0, 0, 0 },
+    { { MNEM, ' ', OP (MOMA_RD_4096), ',', OP (MOMA_RA_4096), 0 } },
+    & ifmt_moma_mdma4096, { 0xF800020C }
+  },
+
+// le.sfbusy
+  {
+    { 0, 0, 0, 0 },
+    { { MNEM, 0 } },
+    & ifmt_moma_4096, { 0xF800020F }
+  },
+
+// le.lw rD,mA(uimm7)
+  {
+    { 0, 0, 0, 0 },
+    { { MNEM, ' ', OP (RD), ',', OP (MOMA_RA_4096), '(', OP (MOMA_UIMM7_SPLIT), ')', 0 } },
+    & ifmt_moma_rdmauimm4096, { 0xF800020D }
+  },
+
+// le.sw mD(uimm7),rA
+  {
+    { 0, 0, 0, 0 },
+    { { MNEM, ' ', OP (MOMA_RD_4096), '(', OP (MOMA_UIMM7_SPLIT), ')', ',', OP (RA), 0 } },
+    & ifmt_moma_mdrauimm4096, { 0xF8000205 }
   },
 
 // Acceleration
@@ -1082,7 +1170,7 @@ static const CGEN_OPCODE or1k_cgen_insn_opcode_table[MAX_INSNS] =
   {
     { 0, 0, 0, 0 },
     { { MNEM, ' ', OP (MOMA_RD_4096), 0 } },
-    & ifmt_moma_md4096, { 0xF8000100 }
+    & ifmt_moma_md4096, { 0xF8000200 }
   },
 
 // le.ror ed,ea,eb
@@ -1104,6 +1192,20 @@ static const CGEN_OPCODE or1k_cgen_insn_opcode_table[MAX_INSNS] =
     { 0, 0, 0, 0 },
     { { MNEM, ' ', OP (MOMA_RD_4096), ',', OP (MOMA_RA_4096), ',', OP (MOMA_RB_4096), 0 } },
     & ifmt_moma_mdmamb4096, { 0xF8000208 }
+  },
+
+// le.srl ed,ea,eb
+  {
+    { 0, 0, 0, 0 },
+    { { MNEM, ' ', OP (MOMA_RD_4096), ',', OP (MOMA_RA_4096), ',', OP (MOMA_RB_4096), 0 } },
+    & ifmt_moma_mdmamb4096, { 0xF8000108 }
+  },
+
+// le.sub ed,ea,eb
+  {
+    { 0, 0, 0, 0 },
+    { { MNEM, ' ', OP (MOMA_RD_4096), ',', OP (MOMA_RA_4096), ',', OP (MOMA_RB_4096), 0 } },
+    & ifmt_moma_mdmamb4096, { 0xF8000002 }
   },
 
 /** backup begin **/

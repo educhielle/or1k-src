@@ -1049,6 +1049,7 @@ const CGEN_IFLD or1k_cgen_ifld_table[] =
   { OR1K_F_MOMA_OP_5_6, "f-moma-op-5-6", 0, 32, 5, 6, { 0, { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }  },
   { OR1K_F_MOMA_OP_9_2, "f-moma-op-9-2", 0, 32, 9, 2, { 0, { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }  },
   { OR1K_F_MOMA_OP_6_7, "f-moma-op-6-7", 0, 32, 6, 7, { 0, { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }  },
+  { OR1K_F_MOMA_RESV_25_5, "f-moma-resv-25-5", 0, 32, 25, 5, { 0|A(RESERVED), { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }  },
   { OR1K_F_MOMA_RESV_25_3, "f-moma-resv-25-3", 0, 32, 25, 3, { 0|A(RESERVED), { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }  },
   { OR1K_F_MOMA_RESV_25_2, "f-moma-resv-25-2", 0, 32, 25, 2, { 0|A(RESERVED), { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }  },
   { OR1K_F_MOMA_RESV_25_1, "f-moma-resv-25-1", 0, 32, 25, 1, { 0|A(RESERVED), { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }  },
@@ -1817,13 +1818,62 @@ static const CGEN_IBASE or1k_cgen_insn_table[MAX_INSNS] =
 
 // Other
   {
-    OR1K_INSN_LE_ADD, "le-mfer", "le.mfer", 32,
+    OR1K_INSN_LE_ENC, "le-enc", "le.enc", 32,
     { 0, { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }
   },
   {
-    OR1K_INSN_LE_AND, "le-mter", "le.mter", 32,
+    OR1K_INSN_LE_MAFDTSPR, "le-mafdtspr", "le.mafdtspr", 32,
     { 0, { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }
   },
+  {
+    OR1K_INSN_LE_MABDTSPR, "le-mabdtspr", "le.mabdtspr", 32,
+    { 0, { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }
+  },
+  {
+    OR1K_INSN_LE_MABFDTSPR, "le-mabfdtspr", "le.mabfdtspr", 32,
+    { 0, { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }
+  },
+  {
+    OR1K_INSN_LE_MAEFSPR, "le-maefspr", "le.maefspr", 32,
+    { 0, { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }
+  },
+  {
+    OR1K_INSN_LE_MFFTSK, "le-mfftsk", "le.mfftsk", 32,
+    { 0, { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }
+  },
+  {
+    OR1K_INSN_LE_MFBTSK, "le-mfbtsk", "le.mfbtsk", 32,
+    { 0, { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }
+  },
+  {
+    OR1K_INSN_LE_MFER, "le-mfer", "le.mfer", 32,
+    { 0, { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }
+  },
+  {
+    OR1K_INSN_LE_MTER, "le-mter", "le.mter", 32,
+    { 0, { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }
+  },
+  {
+    OR1K_INSN_LE_MFSPR, "le-mfspr", "le.mfspr", 32,
+    { 0, { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }
+  },
+  {
+    OR1K_INSN_LE_MTSPR, "le-mtspr", "le.mtspr", 32,
+    { 0, { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }
+  },
+  {
+    OR1K_INSN_LE_SFBUSY, "le-sfbusy", "le.sfbusy", 32,
+    { 0, { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }
+  },
+  {
+    OR1K_INSN_LE_LW, "le-lw", "le.lw", 32,
+    { 0, { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }
+  },
+  {
+    OR1K_INSN_LE_SW, "le-sw", "le.sw", 32,
+    { 0, { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }
+  },
+
 
 // Acceleration
 
@@ -1985,6 +2035,14 @@ static const CGEN_IBASE or1k_cgen_insn_table[MAX_INSNS] =
   },
   {
     OR1K_INSN_LE_SRA, "le-sra", "le.sra", 32,
+    { 0, { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }
+  },
+  {
+    OR1K_INSN_LE_SRL, "le-srl", "le.srl", 32,
+    { 0, { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }
+  },
+  {
+    OR1K_INSN_LE_SUB, "le-sub", "le.sub", 32,
     { 0, { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }
   },
 /* le3.modmul $mD,$mA,$mB,$mC *
