@@ -477,6 +477,13 @@ or1k_cgen_parse_operand (CGEN_CPU_DESC cd,
 
 /** MoMA begin **/
 
+    case OR1K_OPERAND_MOMA_ESRD_4096 :
+      errmsg = cgen_parse_keyword (cd, strp, & or1k_cgen_opval_h_momaesr4096, & fields->f_r1);
+      break;
+    case OR1K_OPERAND_MOMA_ESRA_4096 :
+      errmsg = cgen_parse_keyword (cd, strp, & or1k_cgen_opval_h_momaesr4096, & fields->f_r1);
+      break;
+
     case OR1K_OPERAND_MOMA_RD_4096 :
       errmsg = cgen_parse_keyword (cd, strp, & or1k_cgen_opval_h_momareg4096, & fields->f_r1);
       break;

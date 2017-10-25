@@ -273,6 +273,33 @@ CGEN_KEYWORD or1k_cgen_opval_h_gpr =
 
 /** MoMA begin **/
 
+static CGEN_KEYWORD_ENTRY or1k_cgen_opval_h_momaesr4096_entries[] =
+{
+  { "mod"  ,  0, {0, {{{0, 0}}}}, 0, 0 },
+  { "pub"  ,  1, {0, {{{0, 0}}}}, 0, 0 },
+  { "sstat",  2, {0, {{{0, 0}}}}, 0, 0 },
+  { "pri"  ,  3, {0, {{{0, 0}}}}, 0, 0 },
+  { "esr4" ,  4, {0, {{{0, 0}}}}, 0, 0 },
+  { "esr5" ,  5, {0, {{{0, 0}}}}, 0, 0 },
+  { "esr6" ,  6, {0, {{{0, 0}}}}, 0, 0 },
+  { "esr7" ,  7, {0, {{{0, 0}}}}, 0, 0 },
+  { "fmod" ,  8, {0, {{{0, 0}}}}, 0, 0 },
+  { "fpub" ,  9, {0, {{{0, 0}}}}, 0, 0 },
+  { "esr10", 10, {0, {{{0, 0}}}}, 0, 0 },
+  { "fpri" , 11, {0, {{{0, 0}}}}, 0, 0 },
+  { "bmod" , 12, {0, {{{0, 0}}}}, 0, 0 },
+  { "bpub" , 13, {0, {{{0, 0}}}}, 0, 0 },
+  { "esr14", 14, {0, {{{0, 0}}}}, 0, 0 },
+  { "bpri" , 15, {0, {{{0, 0}}}}, 0, 0 }
+};
+
+CGEN_KEYWORD or1k_cgen_opval_h_momaesr4096 =
+{
+  & or1k_cgen_opval_h_momaesr4096_entries[0],
+  16,
+  0, 0, 0, 0, ""
+};
+
 static CGEN_KEYWORD_ENTRY or1k_cgen_opval_h_momareg4096_entries[] =
 {
   { "ze0", 0, {0, {{{0, 0}}}}, 0, 0 },
@@ -365,6 +392,7 @@ const CGEN_HW_ENTRY or1k_cgen_hw_table[] =
   { "h-spr", HW_H_SPR, CGEN_ASM_NONE, 0, { 0|A(VIRTUAL), { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } } },
   { "h-gpr", HW_H_GPR, CGEN_ASM_KEYWORD, (PTR) & or1k_cgen_opval_h_gpr, { 0, { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } } },
 /** MoMA begin **/
+  { "h-momaesr4096", HW_H_MOMAREG, CGEN_ASM_KEYWORD, (PTR) & or1k_cgen_opval_h_momaesr4096, { 0, { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } } },
   { "h-momareg4096", HW_H_MOMAREG, CGEN_ASM_KEYWORD, (PTR) & or1k_cgen_opval_h_momareg4096, { 0, { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } } },
   { "h-momareg2048", HW_H_MOMAREG, CGEN_ASM_KEYWORD, (PTR) & or1k_cgen_opval_h_momareg2048, { 0, { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } } },
   { "h-momareg1024", HW_H_MOMAREG, CGEN_ASM_KEYWORD, (PTR) & or1k_cgen_opval_h_momareg1024, { 0, { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } } },
@@ -1023,6 +1051,8 @@ const CGEN_IFLD or1k_cgen_ifld_table[] =
   { OR1K_F_R2, "f-r2", 0, 32, 20, 5, { 0, { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }  },
   { OR1K_F_R3, "f-r3", 0, 32, 15, 5, { 0, { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }  },
 /** MoMA begin **/
+  { OR1K_F_MOMA_ESR1_4096, "f-moma-esr1-4096", 0, 32, 24, 4, { 0, { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }  },
+  { OR1K_F_MOMA_ESR2_4096, "f-moma-esr2-4096", 0, 32, 19, 4, { 0, { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }  },
   { OR1K_F_MOMA_R1_4096, "f-moma-r1-4096", 0, 32, 24, 4, { 0, { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }  },
   { OR1K_F_MOMA_R2_4096, "f-moma-r2-4096", 0, 32, 19, 4, { 0, { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }  },
   { OR1K_F_MOMA_R3_4096, "f-moma-r3-4096", 0, 32, 14, 4, { 0, { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }  },
@@ -1227,6 +1257,15 @@ const CGEN_OPERAND or1k_cgen_operand_table[] =
     { 0, { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }  },
 
 /** MoMA begin **/
+
+/* esrD: e3 destination spr D */
+  { "esrD", OR1K_OPERAND_MOMA_ESRD_4096, HW_H_MOMAREG, 24, 4,
+    { 0, { (const PTR) &or1k_cgen_ifld_table[OR1K_F_MOMA_ESR1_4096] } }, 
+    { 0, { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }  },
+/* esrA: e3 source spr A */
+  { "esrA", OR1K_OPERAND_MOMA_ESRA_4096, HW_H_MOMAREG, 19, 4,
+    { 0, { (const PTR) &or1k_cgen_ifld_table[OR1K_F_MOMA_ESR2_4096] } }, 
+    { 0, { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }  },
 
 /* zeD: moma destination register D */
   { "zeD", OR1K_OPERAND_MOMA_RD_4096, HW_H_MOMAREG, 24, 4,
@@ -1870,7 +1909,15 @@ static const CGEN_IBASE or1k_cgen_insn_table[MAX_INSNS] =
     { 0, { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }
   },
   {
+    OR1K_INSN_LE_LW4096, "le-lw4096", "le.lw4096", 32,
+    { 0, { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }
+  },
+  {
     OR1K_INSN_LE_SW, "le-sw", "le.sw", 32,
+    { 0, { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }
+  },
+  {
+    OR1K_INSN_LE_SW4096, "le-sw4096", "le.sw4096", 32,
     { 0, { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }
   },
 

@@ -192,6 +192,15 @@ static const CGEN_IFMT ifmt_moma_mdrauimm4096 ATTRIBUTE_UNUSED = {
   32, 32, 0xffffffff, { { F (F_OPCODE) }, { F (F_MOMA_RESV_25_1) }, { F (F_MOMA_R1_4096) }, { F (F_R2) }, { F (F_MOMA_UIMM7_SPLIT) }, { F (F_MOMA_OP_9_2) }, { F (F_MOMA_OP_6_7) }, { 0 } }
 };
 
+static const CGEN_IFMT ifmt_moma_sdma4096 ATTRIBUTE_UNUSED = {
+  32, 32, 0xffffffff, { { F (F_OPCODE) }, { F (F_MOMA_RESV_25_1) }, { F (F_MOMA_ESR1_4096) }, { F (F_MOMA_RESV_20_1) }, { F (F_MOMA_R2_4096) }, { F (F_MOMA_RESV_15_5) }, { F (F_MOMA_RESV_10_1) }, { F (F_MOMA_OP_9_2) }, { F (F_MOMA_RESV_7_1) }, { F (F_MOMA_OP_6_7) }, { 0 } }
+};
+
+static const CGEN_IFMT ifmt_moma_mdsa4096 ATTRIBUTE_UNUSED = {
+  32, 32, 0xffffffff, { { F (F_OPCODE) }, { F (F_MOMA_RESV_25_1) }, { F (F_MOMA_R1_4096) }, { F (F_MOMA_RESV_20_1) }, { F (F_MOMA_ESR2_4096) }, { F (F_MOMA_RESV_15_5) }, { F (F_MOMA_RESV_10_1) }, { F (F_MOMA_OP_9_2) }, { F (F_MOMA_RESV_7_1) }, { F (F_MOMA_OP_6_7) }, { 0 } }
+};
+
+
 /*
 static const CGEN_IFMT ifmt_moma_mdmambmc4096 ATTRIBUTE_UNUSED = {
   32, 32, 0xffffffff, { { F (F_OPCODE) }, { F (F_MOMA_RESV_25_3) }, { F (F_MOMA_R1_4096) }, { F (F_MOMA_RESV_20_3) }, { F (F_MOMA_R2_4096) }, { F (F_MOMA_RESV_15_3) }, { F (F_MOMA_R3_4096) }, { F (F_MOMA_RESV_10_3) }, { F (F_MOMA_R4_4096) }, { F (F_MOMA_OP_5_6) }, { 0 } }
@@ -824,28 +833,28 @@ static const CGEN_OPCODE or1k_cgen_insn_opcode_table[MAX_INSNS] =
 // le.mafdtspr ed,ea
   {
     { 0, 0, 0, 0 },
-    { { MNEM, ' ', OP (MOMA_RD_4096), ',', OP (MOMA_RA_4096), 0 } },
+    { { MNEM, ' ', OP (MOMA_ESRD_4096), ',', OP (MOMA_RA_4096), 0 } },
     & ifmt_moma_mdma4096, { 0xF800022c }
   },
 
 // le.mabdtspr ed,ea
   {
     { 0, 0, 0, 0 },
-    { { MNEM, ' ', OP (MOMA_RD_4096), ',', OP (MOMA_RA_4096), 0 } },
+    { { MNEM, ' ', OP (MOMA_ESRD_4096), ',', OP (MOMA_RA_4096), 0 } },
     & ifmt_moma_mdma4096, { 0xF800022b }
   },
 
 // le.mabfdtspr ed,ea
   {
     { 0, 0, 0, 0 },
-    { { MNEM, ' ', OP (MOMA_RD_4096), ',', OP (MOMA_RA_4096), 0 } },
+    { { MNEM, ' ', OP (MOMA_ESRD_4096), ',', OP (MOMA_RA_4096), 0 } },
     & ifmt_moma_mdma4096, { 0xF800022d }
   },
 
 // le.maefspr ed,ea
   {
     { 0, 0, 0, 0 },
-    { { MNEM, ' ', OP (MOMA_RD_4096), ',', OP (MOMA_RA_4096), 0 } },
+    { { MNEM, ' ', OP (MOMA_RD_4096), ',', OP (MOMA_ESRA_4096), 0 } },
     & ifmt_moma_mdma4096, { 0xF8000225 }
   },
 
@@ -880,14 +889,14 @@ static const CGEN_OPCODE or1k_cgen_insn_opcode_table[MAX_INSNS] =
 // le.mfspr ed,ea
   {
     { 0, 0, 0, 0 },
-    { { MNEM, ' ', OP (MOMA_RD_4096), ',', OP (MOMA_RA_4096), 0 } },
+    { { MNEM, ' ', OP (MOMA_RD_4096), ',', OP (MOMA_ESRA_4096), 0 } },
     & ifmt_moma_mdma4096, { 0xF8000204 }
   },
 
 // le.mtspr ed,ea
   {
     { 0, 0, 0, 0 },
-    { { MNEM, ' ', OP (MOMA_RD_4096), ',', OP (MOMA_RA_4096), 0 } },
+    { { MNEM, ' ', OP (MOMA_ESRD_4096), ',', OP (MOMA_RA_4096), 0 } },
     & ifmt_moma_mdma4096, { 0xF800020C }
   },
 
@@ -898,18 +907,32 @@ static const CGEN_OPCODE or1k_cgen_insn_opcode_table[MAX_INSNS] =
     & ifmt_moma_4096, { 0xF800020F }
   },
 
-// le.lw rD,mA(uimm7)
-  {
-    { 0, 0, 0, 0 },
-    { { MNEM, ' ', OP (RD), ',', OP (MOMA_RA_4096), '(', OP (MOMA_UIMM7_SPLIT), ')', 0 } },
-    & ifmt_moma_rdmauimm4096, { 0xF800020D }
-  },
-
-// le.sw mD(uimm7),rA
+// le.lw mD(uimm7),rA
   {
     { 0, 0, 0, 0 },
     { { MNEM, ' ', OP (MOMA_RD_4096), '(', OP (MOMA_UIMM7_SPLIT), ')', ',', OP (RA), 0 } },
-    & ifmt_moma_mdrauimm4096, { 0xF8000205 }
+    & ifmt_moma_mdrauimm4096, { 0xF800020D }
+  },
+
+// le.lw4096 mD(uimm7),rA
+  {
+    { 0, 0, 0, 0 },
+    { { MNEM, ' ', OP (MOMA_RD_4096), '(', OP (MOMA_UIMM7_SPLIT), ')', ',', OP (RA), 0 } },
+    & ifmt_moma_mdrauimm4096, { 0xF800020E }
+  },
+
+// le.sw rD,mA(uimm7)
+  {
+    { 0, 0, 0, 0 },
+    { { MNEM, ' ', OP (RD), ',', OP (MOMA_RA_4096), '(', OP (MOMA_UIMM7_SPLIT), ')', 0 } },
+    & ifmt_moma_rdmauimm4096, { 0xF8000205 }
+  },
+
+// le.sw4096 rD,mA(uimm7)
+  {
+    { 0, 0, 0, 0 },
+    { { MNEM, ' ', OP (RD), ',', OP (MOMA_RA_4096), '(', OP (MOMA_UIMM7_SPLIT), ')', 0 } },
+    & ifmt_moma_rdmauimm4096, { 0xF8000206 }
   },
 
 // Acceleration
