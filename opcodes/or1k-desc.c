@@ -1855,9 +1855,19 @@ static const CGEN_IBASE or1k_cgen_insn_table[MAX_INSNS] =
     { 0, { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }
   },
 
+// Secure Computation
+  {
+    OR1K_INSN_LE_EADD, "le-eadd", "le.eadd", 32,
+    { 0, { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }
+  },
+
 // Other
   {
     OR1K_INSN_LE_ENC, "le-enc", "le.enc", 32,
+    { 0, { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }
+  },
+  {
+    OR1K_INSN_LE_GBK, "le-gbk", "le.gbk", 32,
     { 0, { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }
   },
   {

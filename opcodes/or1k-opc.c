@@ -192,6 +192,10 @@ static const CGEN_IFMT ifmt_moma_mdrauimm4096 ATTRIBUTE_UNUSED = {
   32, 32, 0xffffffff, { { F (F_OPCODE) }, { F (F_MOMA_RESV_25_1) }, { F (F_MOMA_R1_4096) }, { F (F_R2) }, { F (F_MOMA_UIMM7_SPLIT) }, { F (F_MOMA_OP_9_2) }, { F (F_MOMA_OP_6_7) }, { 0 } }
 };
 
+static const CGEN_IFMT ifmt_moma_sdmamb4096 ATTRIBUTE_UNUSED = {
+  32, 32, 0xffffffff, { { F (F_OPCODE) }, { F (F_MOMA_RESV_25_1) }, { F (F_MOMA_ESR1_4096) }, { F (F_MOMA_RESV_20_1) }, { F (F_MOMA_R2_4096) }, { F (F_MOMA_RESV_15_1) }, { F (F_MOMA_R3_4096) }, { F (F_MOMA_RESV_10_1) }, { F (F_MOMA_OP_9_2) }, { F (F_MOMA_RESV_7_1) }, { F (F_MOMA_OP_6_7) }, { 0 } }
+};
+
 static const CGEN_IFMT ifmt_moma_sdma4096 ATTRIBUTE_UNUSED = {
   32, 32, 0xffffffff, { { F (F_OPCODE) }, { F (F_MOMA_RESV_25_1) }, { F (F_MOMA_ESR1_4096) }, { F (F_MOMA_RESV_20_1) }, { F (F_MOMA_R2_4096) }, { F (F_MOMA_RESV_15_5) }, { F (F_MOMA_RESV_10_1) }, { F (F_MOMA_OP_9_2) }, { F (F_MOMA_RESV_7_1) }, { F (F_MOMA_OP_6_7) }, { 0 } }
 };
@@ -821,6 +825,15 @@ static const CGEN_OPCODE or1k_cgen_insn_opcode_table[MAX_INSNS] =
     & ifmt_l_rfe, { 0x70000000 }
   },
 
+// Secure Computation
+
+// le.eadd ed,ea,eb
+  {
+    { 0, 0, 0, 0 },
+    { { MNEM, ' ', OP (MOMA_RD_4096), ',', OP (MOMA_RA_4096), ',', OP (MOMA_RB_4096), 0 } },
+    & ifmt_moma_mdmamb4096, { 0xF8000020 }
+  },
+
 // Other
 
 // le.enc ed,ea
@@ -830,25 +843,32 @@ static const CGEN_OPCODE or1k_cgen_insn_opcode_table[MAX_INSNS] =
     & ifmt_moma_mdma4096, { 0xF800022e }
   },
 
+// le.gbk
+  {
+    { 0, 0, 0, 0 },
+    { { MNEM, 0 } },
+    & ifmt_moma_4096, { 0xF8000226 }
+  },
+
 // le.mafdtspr ed,ea
   {
     { 0, 0, 0, 0 },
-    { { MNEM, ' ', OP (MOMA_ESRD_4096), ',', OP (MOMA_RA_4096), 0 } },
-    & ifmt_moma_mdma4096, { 0xF800022c }
+    { { MNEM, ' ', OP (MOMA_ESRD_4096), ',', OP (MOMA_RA_4096), ',', OP (MOMA_RB_4096), 0 } },
+    & ifmt_moma_sdmamb4096, { 0xF800022c }
   },
 
 // le.mabdtspr ed,ea
   {
     { 0, 0, 0, 0 },
-    { { MNEM, ' ', OP (MOMA_ESRD_4096), ',', OP (MOMA_RA_4096), 0 } },
-    & ifmt_moma_mdma4096, { 0xF800022b }
+    { { MNEM, ' ', OP (MOMA_ESRD_4096), ',', OP (MOMA_RA_4096), ',', OP (MOMA_RB_4096), 0 } },
+    & ifmt_moma_sdmamb4096, { 0xF800022b }
   },
 
 // le.mabfdtspr ed,ea
   {
     { 0, 0, 0, 0 },
-    { { MNEM, ' ', OP (MOMA_ESRD_4096), ',', OP (MOMA_RA_4096), 0 } },
-    & ifmt_moma_mdma4096, { 0xF800022d }
+    { { MNEM, ' ', OP (MOMA_ESRD_4096), ',', OP (MOMA_RA_4096), ',', OP (MOMA_RB_4096), 0 } },
+    & ifmt_moma_sdmamb4096, { 0xF800022d }
   },
 
 // le.maefspr ed,ea
