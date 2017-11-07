@@ -1855,7 +1855,7 @@ static const CGEN_IBASE or1k_cgen_insn_table[MAX_INSNS] =
     { 0, { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }
   },
 
-// Secure Computation
+// Secure Int
   {
     OR1K_INSN_LE_EADD, "le-eadd", "le.eadd", 32,
     { 0, { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }
@@ -2018,6 +2018,64 @@ static const CGEN_IBASE or1k_cgen_insn_table[MAX_INSNS] =
   },
   {
     OR1K_INSN_LE_ESUB, "le-esub", "le.esub", 32,
+    { 0, { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }
+  },
+
+// Secure Ring
+  {
+    OR1K_INSN_LE_ERADD, "le-eradd", "le.eradd", 32,
+    { 0, { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }
+  },
+  {
+    OR1K_INSN_LE_ERNOT, "le-ernot", "le.ernot", 32,
+    { 0, { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }
+  },
+  {
+    OR1K_INSN_LE_ERDEC, "le-erdec", "le.erdec", 32,
+    { 0, { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }
+  },
+  {
+    OR1K_INSN_LE_ERPOWU, "le-erpowu", "le.erpowu", 32,
+    { 0, { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }
+  },
+  {
+    OR1K_INSN_LE_ERINC, "le-erinc", "le.erinc", 32,
+    { 0, { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }
+  },
+  {
+    OR1K_INSN_LE_ERMACU, "le-ermacu", "le.ermacu", 32,
+    { 0, { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }
+  },
+  {
+    OR1K_INSN_LE_ERMSBU, "le-ermsbu", "le.ermsbu", 32,
+    { 0, { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }
+  },
+  {
+    OR1K_INSN_LE_ERMULU, "le-ermulu", "le.ermulu", 32,
+    { 0, { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }
+  },
+  {
+    OR1K_INSN_LE_ERRAND, "le-errand", "le.errand", 32,
+    { 0, { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }
+  },
+  {
+    OR1K_INSN_LE_ERROR, "le-error", "le.error", 32,
+    { 0, { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }
+  },
+  {
+    OR1K_INSN_LE_ERSLL, "le-ersll", "le.ersll", 32,
+    { 0, { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }
+  },
+  {
+    OR1K_INSN_LE_ERSRA, "le-ersra", "le.ersra", 32,
+    { 0, { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }
+  },
+  {
+    OR1K_INSN_LE_ERSRL, "le-ersrl", "le.ersrl", 32,
+    { 0, { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }
+  },
+  {
+    OR1K_INSN_LE_ERSUB, "le-ersub", "le.ersub", 32,
     { 0, { { { (1<<MACH_OR32)|(1<<MACH_OR32ND)|(1<<MACH_OR64)|(1<<MACH_OR64ND), 0 } } } }
   },
 

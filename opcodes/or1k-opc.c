@@ -825,7 +825,7 @@ static const CGEN_OPCODE or1k_cgen_insn_opcode_table[MAX_INSNS] =
     & ifmt_l_rfe, { 0x70000000 }
   },
 
-// Secure Computation
+// Secure Int
 
 // le.eadd ed,ea,eb
   {
@@ -1114,6 +1114,106 @@ static const CGEN_OPCODE or1k_cgen_insn_opcode_table[MAX_INSNS] =
     & ifmt_moma_mdmamb4096, { 0xF8000022 }
   },
 
+// Secure Ring
+
+// le.eradd ed,ea,eb
+  {
+    { 0, 0, 0, 0 },
+    { { MNEM, ' ', OP (MOMA_RD_4096), ',', OP (MOMA_RA_4096), ',', OP (MOMA_RB_4096), 0 } },
+    & ifmt_moma_mdmamb4096, { 0xF8000060 }
+  },
+
+// le.ernot ed,ea
+  {
+    { 0, 0, 0, 0 },
+    { { MNEM, ' ', OP (MOMA_RD_4096), ',', OP (MOMA_RA_4096), 0 } },
+    & ifmt_moma_mdma4096, { 0xF8000066 }
+  },
+
+// le.erdec ed
+  {
+    { 0, 0, 0, 0 },
+    { { MNEM, ' ', OP (MOMA_RD_4096), 0 } },
+    & ifmt_moma_md4096, { 0xF800006D }
+  },
+
+// le.erpowu ed,ea,eb
+  {
+    { 0, 0, 0, 0 },
+    { { MNEM, ' ', OP (MOMA_RD_4096), ',', OP (MOMA_RA_4096), ',', OP (MOMA_RB_4096), 0 } },
+    & ifmt_moma_mdmamb4096, { 0xF800036D }
+  },
+
+// le.erinc ed
+  {
+    { 0, 0, 0, 0 },
+    { { MNEM, ' ', OP (MOMA_RD_4096), 0 } },
+    & ifmt_moma_md4096, { 0xF8000061 }
+  },
+
+// le.ermacu ed,ea,eb
+  {
+    { 0, 0, 0, 0 },
+    { { MNEM, ' ', OP (MOMA_RD_4096), ',', OP (MOMA_RA_4096), ',', OP (MOMA_RB_4096), 0 } },
+    & ifmt_moma_mdmamb4096, { 0xF8000363 }
+  },
+
+// le.emsbu ed,ea,eb
+  {
+    { 0, 0, 0, 0 },
+    { { MNEM, ' ', OP (MOMA_RD_4096), ',', OP (MOMA_RA_4096), ',', OP (MOMA_RB_4096), 0 } },
+    & ifmt_moma_mdmamb4096, { 0xF8000364 }
+  },
+
+// le.ermulu ed,ea,eb
+  {
+    { 0, 0, 0, 0 },
+    { { MNEM, ' ', OP (MOMA_RD_4096), ',', OP (MOMA_RA_4096), ',', OP (MOMA_RB_4096), 0 } },
+    & ifmt_moma_mdmamb4096, { 0xF800036B }
+  },
+
+// le.errand ed
+  {
+    { 0, 0, 0, 0 },
+    { { MNEM, ' ', OP (MOMA_RD_4096), 0 } },
+    & ifmt_moma_md4096, { 0xF8000260 }
+  },
+
+// le.error ed,ea,eb
+  {
+    { 0, 0, 0, 0 },
+    { { MNEM, ' ', OP (MOMA_RD_4096), ',', OP (MOMA_RA_4096), ',', OP (MOMA_RB_4096), 0 } },
+    & ifmt_moma_mdmamb4096, { 0xF8000368 }
+  },
+
+// le.ersll ed,ea,eb
+  {
+    { 0, 0, 0, 0 },
+    { { MNEM, ' ', OP (MOMA_RD_4096), ',', OP (MOMA_RA_4096), ',', OP (MOMA_RB_4096), 0 } },
+    & ifmt_moma_mdmamb4096, { 0xF8000068 }
+  },
+
+// le.ersra ed,ea,eb
+  {
+    { 0, 0, 0, 0 },
+    { { MNEM, ' ', OP (MOMA_RD_4096), ',', OP (MOMA_RA_4096), ',', OP (MOMA_RB_4096), 0 } },
+    & ifmt_moma_mdmamb4096, { 0xF8000268 }
+  },
+
+// le.ersrl ed,ea,eb
+  {
+    { 0, 0, 0, 0 },
+    { { MNEM, ' ', OP (MOMA_RD_4096), ',', OP (MOMA_RA_4096), ',', OP (MOMA_RB_4096), 0 } },
+    & ifmt_moma_mdmamb4096, { 0xF8000168 }
+  },
+
+// le.ersub ed,ea,eb
+  {
+    { 0, 0, 0, 0 },
+    { { MNEM, ' ', OP (MOMA_RD_4096), ',', OP (MOMA_RA_4096), ',', OP (MOMA_RB_4096), 0 } },
+    & ifmt_moma_mdmamb4096, { 0xF8000062 }
+  },
+
 // Other
 
 // le.enc ed,ea
@@ -1122,7 +1222,6 @@ static const CGEN_OPCODE or1k_cgen_insn_opcode_table[MAX_INSNS] =
     { { MNEM, ' ', OP (MOMA_RD_4096), ',', OP (MOMA_RA_4096), 0 } },
     & ifmt_moma_mdma4096, { 0xF800022e }
   },
-
 
 // le.gbk
   {
